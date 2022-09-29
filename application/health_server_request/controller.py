@@ -41,7 +41,6 @@ def report_generate_create():
         logger_message('Exception ---> {}'.format(str(e)))
         return {"error_message" : str(e)}, 505
 
-
 @main.route('/report/generate/send', methods=['POST'])
 @verify_report_server_token
 def report_generate_send():

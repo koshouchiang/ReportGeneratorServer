@@ -112,6 +112,8 @@ class HealthServerRequestAction(RequestTemplate):
             application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_S001V1_PATH, self.filename), ReportTable, content['primary_key'])
         elif report_code == 'E001V1':
             self.temp_png_path = os.path.join(E001V1_FILES_PATH, str(user_info['id']))
+            if not os.path.exists(self.temp_png_path):
+                os.mkdir(self.temp_png_path)
             generate_pdf_version_instanse.genReport(report_json, self.filename, self.temp_png_path)
             application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_E001V1_PATH, self.filename), ReportTable, content['primary_key'])
 
