@@ -1,0 +1,110 @@
+{
+    "header": {
+        "report": "S001V1",
+        "reportName": "BEATINFO EXERCISE ANALYSIS REPORT",
+        "testingPeriod": "2021/11/01~11/02",
+        "reportDate": "2021/12/01", 
+        "alternativeName": "Alternative Name",
+        "secondRow": "Second Row"
+    },
+    "userInfo": {
+        "name": "李O民",
+        "birthday": "1969/01/1",
+        "gender": "Male",
+        "age": 52,
+        "height": "177.0 cm",
+        "weight": "83.0 kg"
+    },
+    "ExerciseReport":{
+        "score" : 80,
+        "scoreText": "優",
+        "AssessIndex": {
+            "score": 85,  
+            "scoreText": "佳",
+            "description" : "透過瞬間⾼負荷運動進⾏⾝體質量評估，瞬間⾼強度運動如三分鐘登階，能於短時間內讓⼼率提⾄相對高點，且測試後須⽴刻坐下靜⽌，查看過程中⼼臟是否能夠隨⾝體養分供應需求進⾏快速調節。",
+            "evaluation": "測試文字",
+            "suggestion": "培養。。。。"
+        },
+        "ExerciseIndex": {
+            "score": 75,
+            "scoreText": "優",
+            "description" : "透過30分鐘以上的運動，並且過程中讓⼼率維持在80%以上連續5分鐘。透過持續⾼強度運動，可藉此發現當⼼臟是否因運動時需氧量增加⽽造成失衡。",
+            "evaluation": "測試文字",
+            "suggestion": "培養。。。。",
+            "hr_distribution": [165,150,135,120,105,90,75,60,45] 
+        },
+    "IrregularStatistic":{
+      "IrrinAssess": 0,
+      "IrrinExercise": 5
+     }, 
+    "notes": "notes"
+    },
+    "AssessIndexReport":
+     {
+        "score": 66.78,  
+        "scoreText": "優秀",
+        "Stage1": [110,43],
+	"Stage2": [95,15],
+	"Stage3": [87,8],
+        "Percentage":98,
+        "HRperSec":[100,105,106,118,120,125,130,135,145],
+        "RecoveryHRLoc":[190,280],
+        "RecoveryHRValue":
+        {
+           "HRDecrese":30,
+           "Text": "普通"
+        }
+     },
+     "ExerciseIndexReport":
+     {
+       "HRperSec":[100,105,106,118,120,125,130,135,145],
+       "MaxHRLoc":[280],
+       "maxHRStatistics":{
+                    "date": "2021/11/01",
+                    "time": "00:12:37",
+                    "unit": "10mm/mV",
+                    "HR": 160,
+                    "PR": 119,
+                    "QT": 202,
+                    "QRS": 56,
+                    "QTc": 256,
+                    "Irrequlars": [],
+                    "PVCs": [],
+                    "RPeaks": [ 6, 55, 77 ],
+                    "sec10": [ 1, 2, 3 ],
+                    "sec30": [ 1, 2, 3, 4, 5 ]
+                         }
+    },
+    "irregularHeartRateEcgs": [
+          {
+           "date": "2021/11/01",
+           "time": "00:12:37",
+           "unit": "10mm/mV",
+           "HR": 94,
+           "PR": 119,
+           "QT": 202,
+           "QRS": 56,
+           "QTc": 256,
+           "Irrequlars": [],
+           "PVCs": [ 10, 50 ],
+           "RPeaks": [ 6, 55, 77 ],
+           "sec10": [ 1, 2, 3 ],
+           "sec30": [ 1, 2, 3, 4, 5 ]
+         },
+         {
+           "date": "2021/11/01",
+           "time": "00:12:50",
+           "unit": "10mm/mV",
+           "HR": 125,
+           "PR": 119,
+           "QT": 202,
+           "QRS": 56,
+           "QTc": 256,
+           "Irrequlars": [],
+           "PVCs": [ 10, 50 ],
+           "RPeaks": [ 6, 55, 77 ],
+           "sec10": [ 1, 2, 3 ],
+           "sec30": [ 1, 2, 3, 4, 5 ]
+         }
+      ]
+}

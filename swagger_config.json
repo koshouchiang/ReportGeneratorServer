@@ -1,0 +1,309 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "相關參數說明文件 ---> https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing",
+      "version": "0.1.3",
+      "title": "Report Server",
+      "swagger-ui": "https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing"
+    },
+    "host": "192.168.1.187:5000",
+    "tags": [
+      {
+        "name": "Health Server Request",
+        "description": "all api for Health Server"
+      }
+    ],
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "paths": {
+      "/report/generate/create": {
+        "post": {
+          "tags": [
+            "Health Server Request"
+          ],
+          "summary": "first step which is the request of generate report",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "example":{
+                  "report_code" : "A002V2",
+                  "user_id" : 139,
+                  "health_server_got_generate_request_time": 123456789, 
+                  "health_server_post_create_time": 123456789,
+                  "user_info": 
+                  {
+                    "id": "139",
+                    "name": "koshou",
+                    "email": "koshou@singularwings.com",
+                    "gender": "男",
+                    "height": "176",
+                    "weight": "90",
+                    "birthday": "1996/10/10",
+                    "age": "25"
+                  },
+                  "algorithm_input":
+                  {
+                    "report_start_tt" : 1661481532661,
+                    "report_end_tt" : 1662101927794,
+                    "user_info": 
+                      {
+                        "id": "139",
+                        "name": "koshou",
+                        "email": "koshou@singularwings.com",
+                        "gender": "男",
+                        "height": "176",
+                        "weight": "90",
+                        "birthday": "1996/10/10",
+                        "age": "25"
+                      }
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "建立生成報告序列號碼成功",
+              "schema": {
+                "$ref": "#/definitions/sucess_response"
+              }
+            },
+            "401": {
+              "description": "身分驗證失敗",
+                "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "402": {
+              "description": "Body 資料完整性不足",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "505": {
+              "description": "Exception",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            }
+          }
+        }
+      },
+      "/report/generate/send": {
+        "post": {
+          "tags": [
+            "Health Server Request"
+          ],
+          "summary": "send data(zip format)",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "json format",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "example":{
+                    "zip_file": "zip file",
+                    "end_flag": true,
+                    "report_table_index":0
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "資料接收完整",
+              "schema": {
+                "$ref": "#/definitions/sucess_response"
+              }
+            },
+            "401": {
+              "description": "身分驗證失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "402": {
+              "description": "Body 資料完整性不足",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "403": {
+              "description": "Queue 已滿",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "405": {
+              "description": "尚未有生成報告序列號碼",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "505": {
+              "description": "Exception",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            }
+          }
+        }
+      },
+      "/report/generate/query/{report_table_index}": {
+        "get": {
+          "tags": [
+            "Health Server Request"
+          ],
+          "summary": "query the progress of which report_table_index ",
+          "description": "",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "report_table_index",
+              "in": "path",
+              "description": "query the progress of which report_table_index . ",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "查詢生成報告序列號碼之生成狀態成功",
+              "schema": {
+                "$ref": "#/definitions/sucess_response"
+              }
+            },
+            "401": {
+              "description": "身分驗證失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "402": {
+              "description": "尚未有生成報告序列號碼",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "403": {
+                "description": "演算法失敗",
+                "schema": {
+                  "$ref": "#/definitions/error_response"
+                }
+              },
+              "505": {
+                "description": "Exception",
+                "schema": {
+                  "$ref": "#/definitions/error_response"
+                }
+              }
+          }
+        }
+      },
+      "/report/generate/pdf/{report_table_index}": {
+        "get": {
+          "tags": [
+            "Health Server Request"
+          ],
+          "summary": "get the pdf file",
+          "description": "",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "report_table_index",
+              "in": "path",
+              "description": "get the pdf file",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "提取生成報告序列號碼之報告成功",
+              "schema": {
+                "$ref": "#/definitions/sucess_response"
+              }
+            },
+            "401": {
+              "description": "身分驗證失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "402": {
+              "description": "尚未有生成報告序列號碼",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "403": {
+              "description": "提取失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "505": {
+              "description": "Exception",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+        "bearerAuth": {
+          "name": "Authorization",
+          "in": "header",
+          "type": "apiKey",
+          "description": "token in header"
+        }
+      },
+      "security": [ { "bearerAuth": [] } ],
+    "definitions": {
+        "sucess_response":{
+            "type": "object",
+            "properties": {
+                "sucess_message": {
+                    "type": "object"
+                  }
+            }
+          },
+        "error_response":{
+            "type": "object",
+            "properties": {
+                "error_message": {
+                    "type": "string"
+                }
+            }
+        }
+        }
+  }

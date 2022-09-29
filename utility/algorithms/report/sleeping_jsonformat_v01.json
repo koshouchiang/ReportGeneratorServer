@@ -1,0 +1,189 @@
+{
+    "header": {
+        "report": "E001V1",
+        "reportName": "BEATINFO SLEEPING ANALYSIS REPORT",
+        "testingPeriod": "2021/11/01~11/02",
+        "reportDate": "2021/12/01", 
+        "alternativeName": "Alternative Name",
+        "secondRow": "Second Row"
+    },
+    "userInfo": {
+        "name": "李O民",
+        "birthday": "1969/01/1",
+        "gender": "Male",
+        "age": 52,
+        "height": "177.0 cm",
+        "weight": "83.0 kg"
+    },
+
+    "sleepingState":{
+        "date": "2021/11/01",
+        "time": "00:12:37", 
+        "Stage":[0,1,2,3,3,3,2],
+        "Posture":[1,1,2,3,3,4],
+        "HeartRate":[60,62,61,65,65,68,69,70,68]  
+    },
+
+    "sleepingQualityReport": {
+        "score" : 80,
+        "scoreText": "優",
+        "sleepingTimeIndex": {
+            "score": 85,  
+            "scoreText": "佳",
+            "description" : "評估。。。。"
+        },
+        "timeCostIndex": {
+            "cost": 5,
+            "scoreText": "佳",
+            "description" : "評估。。。。"
+        },
+        "deepRatioIndex": {
+            "ratio": 25,
+            "scoreText": "優",
+            "description" : "評估。。。。"
+        },
+        "lightRatioIndex": {
+            "ratio": 65,
+            "scoreText": "普",
+            "description" : "評估。。。。"           
+        },
+        "remRatioIndex": {
+            "ratio": 10,
+            "scoreText": "普",
+            "description" : "評估。。。。"            
+        },
+        "wakeIndex": {
+            "time": 2,
+            "scoreText": "優",
+            "description" : "評估。。。。"           
+        },
+        "turnoverIndex": {
+            "times": 13,
+            "scoreText": "普",
+            "description" : "評估。。。。"           
+        }
+
+    },
+    "notes": "notes",
+    "SleepingQualityExamEvaluation": {
+        "scoreRecord": {
+            "description": "右爲。。。",
+            "records": [
+                {
+                    "name": "Report 1",
+                    "date": "2021/12/01",
+                    "score": 80
+                },
+                {
+                    "name": "Report 2",
+                    "date": "2021/10/01",
+                    "score": 85
+                },
+                {
+                    "name": "Report 3",
+                    "date": "2021/08/01",
+                    "score": 80
+                }
+            ]
+        },
+    "maxHRStatistics":{
+                    "date": "2021/11/01",
+                    "time": "00:12:37",
+                    "unit": "10mm/mV",
+                    "HR": 94,
+                    "PR": 119,
+                    "QT": 202,
+                    "QRS": 56,
+                    "QTc": 256,
+                    "Irrequlars": [],
+                    "PVCs": [],
+                    "RPeaks": [ 6, 55, 77 ],
+                    "sec10": [ 1, 2, 3 ],
+                    "sec30": [ 1, 2, 3, 4, 5 ]
+       },
+    "minHRStatistics":{
+                    "date": "2021/11/01",
+                    "time": "00:12:37",
+                    "unit": "10mm/mV",
+                    "HR": 94,
+                    "PR": 119,
+                    "QT": 202,
+                    "QRS": 56,
+                    "QTc": 256,
+                    "Irrequlars": [],
+                    "PVCs": [],
+                    "RPeaks": [ 6, 55, 77 ],
+                    "sec10": [ 1, 2, 3 ],
+                    "sec30": [ 1, 2, 3, 4, 5 ]
+      }
+    },
+    "irregularHeartRateStatistics": [
+        {
+            "date": "2021/11/01",
+            "maxHR": 172,
+            "minHR": 55, 
+            "averageHR": 128,
+            "heartRate24Hours": [ 
+                {
+                    "hour": "01",
+                    "evaluationTime": 60,
+                    "average": 125,
+                    "max": 150,
+                    "min": 88,
+                    "maxDecrease": false,
+                    "minHR": false,
+                    "irregular": {
+                        "number": 12,
+                        "rate": 0.67
+                    }
+                }, 
+                {
+                    "hour": "02",
+                    "evaluationTime": 55,
+                    "average": 60,
+                    "max": 135,
+                    "min": 55,
+                    "maxDecrease": false,
+                    "minHR": true,
+                    "irregular": {
+                        "number": 12,
+                        "rate": 0.25
+                    }
+                }, 
+                {
+                    "hour": "03",
+                    "evaluationTime": 0
+                }, 
+                {
+                    "date": "04",
+                    "evaluationTime": 60,
+                    "average": 70,
+                    "max": 135,
+                    "min": 60,
+                    "maxDecrease": true,
+                    "irregular": {
+                        "number": 18,
+                        "rate": 0.82
+                    }
+                }
+            ],
+            "ecgs": [
+                {
+                    "date": "2021/11/01",
+                    "time": "00:12:37",
+                    "unit": "10mm/mV",
+                    "HR": 94,
+                    "PR": 119,
+                    "QT": 202,
+                    "QRS": 56,
+                    "QTc": 256,
+                    "Irrequlars": [],
+                    "PVCs": [ 10, 50 ],
+                    "RPeaks": [ 6, 55, 77 ],
+                    "sec10": [ 1, 2, 3 ],
+                    "sec30": [ 1, 2, 3, 4, 5 ]
+                }
+            ]
+        }
+    ]
+}

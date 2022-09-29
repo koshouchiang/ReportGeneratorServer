@@ -1,0 +1,295 @@
+[2022-09-28 12:08:16,946 INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.187:5000
+[2022-09-28 12:08:16,946 INFO] [33mPress CTRL+C to quit[0m
+[2022-09-28 12:08:31,950 DEBUG] {'sucess_message': {'report_table_index': 14}}
+[2022-09-28 12:08:31,952 INFO] 192.168.1.135 - - [28/Sep/2022 12:08:31] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 12:08:37,352 INFO] 192.168.1.135 - - [28/Sep/2022 12:08:37] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 12:09:05,820 DEBUG] Reading 'head' table from disk
+[2022-09-28 12:09:05,821 DEBUG] Decompiling 'head' table
+[2022-09-28 12:09:05,821 DEBUG] Reading 'hmtx' table from disk
+[2022-09-28 12:09:05,821 DEBUG] Decompiling 'hmtx' table
+[2022-09-28 12:09:05,821 DEBUG] Reading 'maxp' table from disk
+[2022-09-28 12:09:05,821 DEBUG] Decompiling 'maxp' table
+[2022-09-28 12:09:05,821 DEBUG] Reading 'hhea' table from disk
+[2022-09-28 12:09:05,821 DEBUG] Decompiling 'hhea' table
+[2022-09-28 12:09:05,824 DEBUG] Reading 'post' table from disk
+[2022-09-28 12:09:05,824 DEBUG] Decompiling 'post' table
+[2022-09-28 12:09:05,859 DEBUG] Reading 'OS/2' table from disk
+[2022-09-28 12:09:05,859 DEBUG] Decompiling 'OS/2' table
+[2022-09-28 12:09:05,860 DEBUG] Reading 'cmap' table from disk
+[2022-09-28 12:09:05,860 DEBUG] Decompiling 'cmap' table
+[2022-09-28 12:09:05,975 DEBUG] Reading 'name' table from disk
+[2022-09-28 12:09:05,975 DEBUG] Decompiling 'name' table
+[2022-09-28 12:09:05,987 DEBUG] Reading 'head' table from disk
+[2022-09-28 12:09:05,988 DEBUG] Decompiling 'head' table
+[2022-09-28 12:09:05,988 DEBUG] Reading 'hmtx' table from disk
+[2022-09-28 12:09:05,988 DEBUG] Decompiling 'hmtx' table
+[2022-09-28 12:09:05,988 DEBUG] Reading 'maxp' table from disk
+[2022-09-28 12:09:05,988 DEBUG] Decompiling 'maxp' table
+[2022-09-28 12:09:05,988 DEBUG] Reading 'hhea' table from disk
+[2022-09-28 12:09:05,988 DEBUG] Decompiling 'hhea' table
+[2022-09-28 12:09:05,991 DEBUG] Reading 'post' table from disk
+[2022-09-28 12:09:05,991 DEBUG] Decompiling 'post' table
+[2022-09-28 12:09:06,041 DEBUG] Reading 'OS/2' table from disk
+[2022-09-28 12:09:06,041 DEBUG] Decompiling 'OS/2' table
+[2022-09-28 12:09:06,041 DEBUG] Reading 'cmap' table from disk
+[2022-09-28 12:09:06,041 DEBUG] Decompiling 'cmap' table
+[2022-09-28 12:09:06,195 DEBUG] Reading 'name' table from disk
+[2022-09-28 12:09:06,195 DEBUG] Decompiling 'name' table
+[2022-09-28 12:09:06,198 DEBUG] STREAM b'IHDR' 16 13
+[2022-09-28 12:09:06,198 DEBUG] STREAM b'iCCP' 41 312
+[2022-09-28 12:09:06,198 DEBUG] iCCP profile name b'kCGColorSpaceAdobeRGB1998'
+[2022-09-28 12:09:06,199 DEBUG] Compression method 0
+[2022-09-28 12:09:06,199 DEBUG] STREAM b'eXIf' 365 56
+[2022-09-28 12:09:06,199 DEBUG] STREAM b'IDAT' 433 7292
+[2022-09-28 12:09:06,258 DEBUG] STREAM b'IHDR' 16 13
+[2022-09-28 12:09:06,258 DEBUG] STREAM b'sBIT' 41 4
+[2022-09-28 12:09:06,258 DEBUG] b'sBIT' 41 4 (unknown)
+[2022-09-28 12:09:06,259 DEBUG] STREAM b'IDAT' 57 250
+[2022-09-28 12:09:06,297 DEBUG] Final doc sections size summary:
+[2022-09-28 12:09:06,298 DEBUG] - header.size: 9.0B
+[2022-09-28 12:09:06,336 DEBUG] - pages.size: 168.6KiB
+[2022-09-28 12:09:06,336 DEBUG] - annotations_objects.size: 0.0B
+[2022-09-28 12:09:06,336 DEBUG] - embedded_files.size: 0.0B
+[2022-09-28 12:09:06,344 DEBUG] Reading 'cmap' table from disk
+[2022-09-28 12:09:06,344 DEBUG] Decompiling 'cmap' table
+[2022-09-28 12:09:06,350 DEBUG] Reading 'post' table from disk
+[2022-09-28 12:09:06,350 DEBUG] Decompiling 'post' table
+[2022-09-28 12:09:06,350 DEBUG] Reading 'maxp' table from disk
+[2022-09-28 12:09:06,350 DEBUG] Decompiling 'maxp' table
+[2022-09-28 12:09:06,389 DEBUG] Took 0.000s to load 'maxp'
+[2022-09-28 12:09:06,389 DEBUG] Took 0.000s to prune 'maxp'
+[2022-09-28 12:09:06,389 INFO] maxp pruned
+[2022-09-28 12:09:06,389 DEBUG] Took 0.000s to load 'cmap'
+[2022-09-28 12:09:06,389 DEBUG] Took 0.000s to prune 'cmap'
+[2022-09-28 12:09:06,389 INFO] cmap pruned
+[2022-09-28 12:09:06,390 DEBUG] Took 0.000s to load 'post'
+[2022-09-28 12:09:06,390 DEBUG] Took 0.000s to prune 'post'
+[2022-09-28 12:09:06,390 INFO] post pruned
+[2022-09-28 12:09:06,391 INFO] GDEF dropped
+[2022-09-28 12:09:06,391 INFO] GPOS dropped
+[2022-09-28 12:09:06,391 INFO] GSUB dropped
+[2022-09-28 12:09:06,391 INFO] DSIG dropped
+[2022-09-28 12:09:06,391 DEBUG] Reading 'name' table from disk
+[2022-09-28 12:09:06,391 DEBUG] Decompiling 'name' table
+[2022-09-28 12:09:06,391 DEBUG] Took 0.000s to load 'name'
+[2022-09-28 12:09:06,391 DEBUG] Reading 'fvar' table from disk
+[2022-09-28 12:09:06,391 DEBUG] Reading 'STAT' table from disk
+[2022-09-28 12:09:06,391 DEBUG] Took 0.000s to prune 'name'
+[2022-09-28 12:09:06,391 INFO] name pruned
+[2022-09-28 12:09:06,391 DEBUG] Reading 'glyf' table from disk
+[2022-09-28 12:09:06,399 DEBUG] Decompiling 'glyf' table
+[2022-09-28 12:09:06,399 DEBUG] Reading 'loca' table from disk
+[2022-09-28 12:09:06,399 DEBUG] Decompiling 'loca' table
+[2022-09-28 12:09:06,399 DEBUG] Reading 'head' table from disk
+[2022-09-28 12:09:06,399 DEBUG] Decompiling 'head' table
+[2022-09-28 12:09:06,488 DEBUG] Took 0.097s to load 'glyf'
+[2022-09-28 12:09:06,488 DEBUG] Took 0.000s to prune 'glyf'
+[2022-09-28 12:09:06,488 INFO] glyf pruned
+[2022-09-28 12:09:06,492 DEBUG] Took 0.002s to close glyph list over 'cmap'
+[2022-09-28 12:09:06,492 INFO] Added gid0 to subset
+[2022-09-28 12:09:06,492 INFO] Added first four glyphs to subset
+[2022-09-28 12:09:06,492 INFO] Closing glyph list over 'glyf': 178 glyphs before
+[2022-09-28 12:09:06,492 INFO] Glyph names: ['.notdef', '.notdef#1', '.notdef#10105', '.notdef#10126', '.notdef#10186', '.notdef#10890', '.notdef#11171', '.notdef#11412', '.notdef#11444', '.notdef#11581', '.notdef#12690', '.notdef#12701', '.notdef#12746', '.notdef#12796', '.notdef#12813', '.notdef#12933', '.notdef#13', '.notdef#13017', '.notdef#13045', '.notdef#13069', '.notdef#13167', '.notdef#13226', '.notdef#13456', '.notdef#13888', '.notdef#14084', '.notdef#14412', '.notdef#14502', '.notdef#14609', '.notdef#14745', '.notdef#14884', '.notdef#14893', '.notdef#14913', '.notdef#15', '.notdef#15505', '.notdef#15667', '.notdef#16', '.notdef#16077', '.notdef#16108', '.notdef#16191', '.notdef#16465', '.notdef#16682', '.notdef#16699', '.notdef#17', '.notdef#17443', '.notdef#17667', '.notdef#18', '.notdef#18048', '.notdef#18452', '.notdef#18461', '.notdef#18476', '.notdef#18532', '.notdef#18797', '.notdef#18798', '.notdef#18806', '.notdef#18910', '.notdef#19', '.notdef#19100', '.notdef#19616', '.notdef#19976', '.notdef#20', '.notdef#20545', '.notdef#21', '.notdef#21176', '.notdef#21194', '.notdef#21313', '.notdef#21333', '.notdef#21427', '.notdef#21686', '.notdef#22', '.notdef#23', '.notdef#23703', '.notdef#23714', '.notdef#23794', '.notdef#24', '.notdef#24071', '.notdef#24677', '.notdef#24860', '.notdef#25', '.notdef#25578', '.notdef#25610', '.notdef#25612', '.notdef#25990', '.notdef#26', '.notdef#26007', '.notdef#26194', '.notdef#26573', '.notdef#26760', '.notdef#26820', '.notdef#26923', '.notdef#27', '.notdef#27018', '.notdef#27180', '.notdef#27184', '.notdef#27891', '.notdef#29042', '.notdef#29161', '.notdef#29235', '.notdef#29239', '.notdef#32012', '.notdef#32016', '.notdef#32021', '.notdef#32094', '.notdef#32107', '.notdef#32134', '.notdef#32175', '.notdef#32204', '.notdef#32241', '.notdef#32244', '.notdef#32251', '.notdef#32275', '.notdef#33', '.notdef#34', '.notdef#35', '.notdef#36', '.notdef#37', '.notdef#38', '.notdef#39', '.notdef#40', '.notdef#41', '.notdef#42', '.notdef#45', '.notdef#46', '.notdef#47', '.notdef#48', '.notdef#49', '.notdef#50', '.notdef#51', '.notdef#52', '.notdef#53', '.notdef#54', '.notdef#55', '.notdef#56', '.notdef#57', '.notdef#6', '.notdef#66', '.notdef#67', '.notdef#68', '.notdef#69', '.notdef#70', '.notdef#72', '.notdef#73', '.notdef#74', '.notdef#76', '.notdef#77', '.notdef#78', '.notdef#79', '.notdef#80', '.notdef#81', '.notdef#82', '.notdef#83', '.notdef#84', '.notdef#86', '.notdef#8608', '.notdef#8617', '.notdef#8621', '.notdef#8653', '.notdef#87', '.notdef#8747', '.notdef#8793', '.notdef#88', '.notdef#8860', '.notdef#8911', '.notdef#8940', '.notdef#8977', '.notdef#8989', '.notdef#9176', '.notdef#92', '.notdef#9215', '.notdef#93', '.notdef#94', '.notdef#9408', '.notdef#95', '.notdef#9649', '.notdef#9765', '.notdef#9822', '.notdef#9933', '.null', 'nonmarkingreturn']
+[2022-09-28 12:09:06,495 INFO] Glyph IDs:   [0, 1, 2, 3, 8, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 68, 69, 70, 71, 72, 74, 75, 76, 78, 79, 80, 81, 82, 83, 84, 85, 86, 88, 89, 90, 94, 95, 96, 97, 8612, 8621, 8625, 8657, 8751, 8797, 8864, 8915, 8944, 8981, 8993, 9180, 9219, 9412, 9653, 9769, 9826, 9937, 10109, 10130, 10190, 10894, 11175, 11416, 11448, 11585, 12694, 12705, 12750, 12800, 12817, 12937, 13021, 13049, 13073, 13171, 13230, 13460, 13892, 14088, 14416, 14506, 14613, 14749, 14888, 14897, 14917, 15509, 15671, 16081, 16112, 16195, 16469, 16686, 16703, 17447, 17671, 18052, 18456, 18465, 18480, 18536, 18801, 18802, 18810, 18914, 19104, 19620, 19980, 20549, 21180, 21198, 21317, 21337, 21431, 21690, 23707, 23718, 23798, 24075, 24681, 24864, 25582, 25614, 25616, 25994, 26011, 26198, 26577, 26764, 26824, 26927, 27022, 27184, 27188, 27895, 29046, 29165, 29239, 29243, 32032, 32036, 32041, 32114, 32127, 32154, 32195, 32224, 32261, 32264, 32271, 32295]
+[2022-09-28 12:09:06,495 INFO] Closed glyph list over 'glyf': 178 glyphs after
+[2022-09-28 12:09:06,495 INFO] Glyph names: ['.notdef', '.notdef#1', '.notdef#10105', '.notdef#10126', '.notdef#10186', '.notdef#10890', '.notdef#11171', '.notdef#11412', '.notdef#11444', '.notdef#11581', '.notdef#12690', '.notdef#12701', '.notdef#12746', '.notdef#12796', '.notdef#12813', '.notdef#12933', '.notdef#13', '.notdef#13017', '.notdef#13045', '.notdef#13069', '.notdef#13167', '.notdef#13226', '.notdef#13456', '.notdef#13888', '.notdef#14084', '.notdef#14412', '.notdef#14502', '.notdef#14609', '.notdef#14745', '.notdef#14884', '.notdef#14893', '.notdef#14913', '.notdef#15', '.notdef#15505', '.notdef#15667', '.notdef#16', '.notdef#16077', '.notdef#16108', '.notdef#16191', '.notdef#16465', '.notdef#16682', '.notdef#16699', '.notdef#17', '.notdef#17443', '.notdef#17667', '.notdef#18', '.notdef#18048', '.notdef#18452', '.notdef#18461', '.notdef#18476', '.notdef#18532', '.notdef#18797', '.notdef#18798', '.notdef#18806', '.notdef#18910', '.notdef#19', '.notdef#19100', '.notdef#19616', '.notdef#19976', '.notdef#20', '.notdef#20545', '.notdef#21', '.notdef#21176', '.notdef#21194', '.notdef#21313', '.notdef#21333', '.notdef#21427', '.notdef#21686', '.notdef#22', '.notdef#23', '.notdef#23703', '.notdef#23714', '.notdef#23794', '.notdef#24', '.notdef#24071', '.notdef#24677', '.notdef#24860', '.notdef#25', '.notdef#25578', '.notdef#25610', '.notdef#25612', '.notdef#25990', '.notdef#26', '.notdef#26007', '.notdef#26194', '.notdef#26573', '.notdef#26760', '.notdef#26820', '.notdef#26923', '.notdef#27', '.notdef#27018', '.notdef#27180', '.notdef#27184', '.notdef#27891', '.notdef#29042', '.notdef#29161', '.notdef#29235', '.notdef#29239', '.notdef#32012', '.notdef#32016', '.notdef#32021', '.notdef#32094', '.notdef#32107', '.notdef#32134', '.notdef#32175', '.notdef#32204', '.notdef#32241', '.notdef#32244', '.notdef#32251', '.notdef#32275', '.notdef#33', '.notdef#34', '.notdef#35', '.notdef#36', '.notdef#37', '.notdef#38', '.notdef#39', '.notdef#40', '.notdef#41', '.notdef#42', '.notdef#45', '.notdef#46', '.notdef#47', '.notdef#48', '.notdef#49', '.notdef#50', '.notdef#51', '.notdef#52', '.notdef#53', '.notdef#54', '.notdef#55', '.notdef#56', '.notdef#57', '.notdef#6', '.notdef#66', '.notdef#67', '.notdef#68', '.notdef#69', '.notdef#70', '.notdef#72', '.notdef#73', '.notdef#74', '.notdef#76', '.notdef#77', '.notdef#78', '.notdef#79', '.notdef#80', '.notdef#81', '.notdef#82', '.notdef#83', '.notdef#84', '.notdef#86', '.notdef#8608', '.notdef#8617', '.notdef#8621', '.notdef#8653', '.notdef#87', '.notdef#8747', '.notdef#8793', '.notdef#88', '.notdef#8860', '.notdef#8911', '.notdef#8940', '.notdef#8977', '.notdef#8989', '.notdef#9176', '.notdef#92', '.notdef#9215', '.notdef#93', '.notdef#94', '.notdef#9408', '.notdef#95', '.notdef#9649', '.notdef#9765', '.notdef#9822', '.notdef#9933', '.null', 'nonmarkingreturn']
+[2022-09-28 12:09:06,495 INFO] Glyph IDs:   [0, 1, 2, 3, 8, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 68, 69, 70, 71, 72, 74, 75, 76, 78, 79, 80, 81, 82, 83, 84, 85, 86, 88, 89, 90, 94, 95, 96, 97, 8612, 8621, 8625, 8657, 8751, 8797, 8864, 8915, 8944, 8981, 8993, 9180, 9219, 9412, 9653, 9769, 9826, 9937, 10109, 10130, 10190, 10894, 11175, 11416, 11448, 11585, 12694, 12705, 12750, 12800, 12817, 12937, 13021, 13049, 13073, 13171, 13230, 13460, 13892, 14088, 14416, 14506, 14613, 14749, 14888, 14897, 14917, 15509, 15671, 16081, 16112, 16195, 16469, 16686, 16703, 17447, 17671, 18052, 18456, 18465, 18480, 18536, 18801, 18802, 18810, 18914, 19104, 19620, 19980, 20549, 21180, 21198, 21317, 21337, 21431, 21690, 23707, 23718, 23798, 24075, 24681, 24864, 25582, 25614, 25616, 25994, 26011, 26198, 26577, 26764, 26824, 26927, 27022, 27184, 27188, 27895, 29046, 29165, 29239, 29243, 32032, 32036, 32041, 32114, 32127, 32154, 32195, 32224, 32261, 32264, 32271, 32295]
+[2022-09-28 12:09:06,495 DEBUG] Took 0.003s to close glyph list over 'glyf'
+[2022-09-28 12:09:06,497 INFO] Retaining 178 glyphs
+[2022-09-28 12:09:06,497 INFO] head subsetting not needed
+[2022-09-28 12:09:06,498 INFO] hhea subsetting not needed
+[2022-09-28 12:09:06,498 INFO] maxp subsetting not needed
+[2022-09-28 12:09:06,498 INFO] OS/2 subsetting not needed
+[2022-09-28 12:09:06,498 DEBUG] Reading 'hmtx' table from disk
+[2022-09-28 12:09:06,498 DEBUG] Decompiling 'hmtx' table
+[2022-09-28 12:09:06,498 DEBUG] Reading 'hhea' table from disk
+[2022-09-28 12:09:06,498 DEBUG] Decompiling 'hhea' table
+[2022-09-28 12:09:06,509 DEBUG] Took 0.011s to subset 'hmtx'
+[2022-09-28 12:09:06,509 INFO] hmtx subsetted
+[2022-09-28 12:09:06,519 DEBUG] Took 0.010s to subset 'cmap'
+[2022-09-28 12:09:06,519 INFO] cmap subsetted
+[2022-09-28 12:09:06,520 INFO] fpgm subsetting not needed
+[2022-09-28 12:09:06,520 INFO] prep subsetting not needed
+[2022-09-28 12:09:06,520 INFO] cvt  subsetting not needed
+[2022-09-28 12:09:06,520 INFO] loca subsetting not needed
+[2022-09-28 12:09:06,520 DEBUG] Took 0.000s to subset 'post'
+[2022-09-28 12:09:06,520 INFO] post subsetted
+[2022-09-28 12:09:06,520 INFO] gasp subsetting not needed
+[2022-09-28 12:09:06,520 INFO] name subsetting not needed
+[2022-09-28 12:09:06,529 DEBUG] Took 0.009s to subset 'glyf'
+[2022-09-28 12:09:06,529 INFO] glyf subsetted
+[2022-09-28 12:09:06,529 DEBUG] Took 0.000s to subset GlyphOrder
+[2022-09-28 12:09:06,529 DEBUG] Took 0.000s to prune 'head'
+[2022-09-28 12:09:06,529 INFO] head pruned
+[2022-09-28 12:09:06,529 DEBUG] Reading 'OS/2' table from disk
+[2022-09-28 12:09:06,530 DEBUG] Decompiling 'OS/2' table
+[2022-09-28 12:09:06,530 INFO] OS/2 Unicode ranges pruned: [0, 1, 59, 61]
+[2022-09-28 12:09:06,533 DEBUG] Took 0.003s to prune 'glyf'
+[2022-09-28 12:09:06,533 INFO] glyf pruned
+[2022-09-28 12:09:06,534 DEBUG] Compiling 'glyf' table
+[2022-09-28 12:09:06,579 DEBUG] Writing 'glyf' table to disk
+[2022-09-28 12:09:06,579 DEBUG] Compiling 'maxp' table
+[2022-09-28 12:09:06,580 DEBUG] Writing 'maxp' table to disk
+[2022-09-28 12:09:06,580 DEBUG] Compiling 'loca' table
+[2022-09-28 12:09:06,580 DEBUG] Writing 'loca' table to disk
+[2022-09-28 12:09:06,580 DEBUG] Compiling 'head' table
+[2022-09-28 12:09:06,580 DEBUG] Writing 'head' table to disk
+[2022-09-28 12:09:06,580 DEBUG] Compiling 'hmtx' table
+[2022-09-28 12:09:06,581 DEBUG] Writing 'hmtx' table to disk
+[2022-09-28 12:09:06,581 DEBUG] Compiling 'hhea' table
+[2022-09-28 12:09:06,581 DEBUG] Writing 'hhea' table to disk
+[2022-09-28 12:09:06,581 DEBUG] Compiling 'OS/2' table
+[2022-09-28 12:09:06,581 DEBUG] Writing 'OS/2' table to disk
+[2022-09-28 12:09:06,581 DEBUG] Compiling 'cmap' table
+[2022-09-28 12:09:06,582 DEBUG] Writing 'cmap' table to disk
+[2022-09-28 12:09:06,582 DEBUG] Reading 'fpgm' table from disk
+[2022-09-28 12:09:06,582 DEBUG] Writing 'fpgm' table to disk
+[2022-09-28 12:09:06,582 DEBUG] Reading 'prep' table from disk
+[2022-09-28 12:09:06,582 DEBUG] Writing 'prep' table to disk
+[2022-09-28 12:09:06,582 DEBUG] Reading 'cvt ' table from disk
+[2022-09-28 12:09:06,582 DEBUG] Writing 'cvt ' table to disk
+[2022-09-28 12:09:06,582 DEBUG] Compiling 'name' table
+[2022-09-28 12:09:06,582 DEBUG] Writing 'name' table to disk
+[2022-09-28 12:09:06,582 DEBUG] Compiling 'post' table
+[2022-09-28 12:09:06,582 DEBUG] Writing 'post' table to disk
+[2022-09-28 12:09:06,583 DEBUG] Reading 'gasp' table from disk
+[2022-09-28 12:09:06,583 DEBUG] Writing 'gasp' table to disk
+[2022-09-28 12:09:06,611 DEBUG] Reading 'cmap' table from disk
+[2022-09-28 12:09:06,611 DEBUG] Decompiling 'cmap' table
+[2022-09-28 12:09:06,615 DEBUG] Reading 'post' table from disk
+[2022-09-28 12:09:06,615 DEBUG] Decompiling 'post' table
+[2022-09-28 12:09:06,615 DEBUG] Reading 'maxp' table from disk
+[2022-09-28 12:09:06,615 DEBUG] Decompiling 'maxp' table
+[2022-09-28 12:09:06,657 DEBUG] Took 0.000s to load 'maxp'
+[2022-09-28 12:09:06,658 DEBUG] Took 0.000s to prune 'maxp'
+[2022-09-28 12:09:06,658 INFO] maxp pruned
+[2022-09-28 12:09:06,658 DEBUG] Took 0.000s to load 'cmap'
+[2022-09-28 12:09:06,658 DEBUG] Took 0.000s to prune 'cmap'
+[2022-09-28 12:09:06,658 INFO] cmap pruned
+[2022-09-28 12:09:06,658 DEBUG] Took 0.000s to load 'post'
+[2022-09-28 12:09:06,658 DEBUG] Took 0.000s to prune 'post'
+[2022-09-28 12:09:06,658 INFO] post pruned
+[2022-09-28 12:09:06,658 INFO] GDEF dropped
+[2022-09-28 12:09:06,658 INFO] GPOS dropped
+[2022-09-28 12:09:06,658 INFO] GSUB dropped
+[2022-09-28 12:09:06,659 DEBUG] Reading 'name' table from disk
+[2022-09-28 12:09:06,659 DEBUG] Decompiling 'name' table
+[2022-09-28 12:09:06,659 DEBUG] Took 0.000s to load 'name'
+[2022-09-28 12:09:06,659 DEBUG] Reading 'fvar' table from disk
+[2022-09-28 12:09:06,659 DEBUG] Reading 'STAT' table from disk
+[2022-09-28 12:09:06,659 DEBUG] Took 0.000s to prune 'name'
+[2022-09-28 12:09:06,659 INFO] name pruned
+[2022-09-28 12:09:06,659 DEBUG] Reading 'glyf' table from disk
+[2022-09-28 12:09:06,672 DEBUG] Decompiling 'glyf' table
+[2022-09-28 12:09:06,673 DEBUG] Reading 'loca' table from disk
+[2022-09-28 12:09:06,673 DEBUG] Decompiling 'loca' table
+[2022-09-28 12:09:06,673 DEBUG] Reading 'head' table from disk
+[2022-09-28 12:09:06,673 DEBUG] Decompiling 'head' table
+[2022-09-28 12:09:06,707 DEBUG] Took 0.048s to load 'glyf'
+[2022-09-28 12:09:06,708 DEBUG] Took 0.000s to prune 'glyf'
+[2022-09-28 12:09:06,708 INFO] glyf pruned
+[2022-09-28 12:09:06,719 DEBUG] Took 0.010s to close glyph list over 'cmap'
+[2022-09-28 12:09:06,719 INFO] Added gid0 to subset
+[2022-09-28 12:09:06,719 INFO] Added first four glyphs to subset
+[2022-09-28 12:09:06,719 INFO] Closing glyph list over 'glyf': 183 glyphs before
+[2022-09-28 12:09:06,719 INFO] Glyph names: ['.notdef', '.null', 'A', 'B', 'H', 'I', 'T', 'b', 'braceleft', 'braceright', 'eight', 'five', 'four', 'n', 'nine', 'one', 'parenleft', 'parenright', 'percent', 'period', 'seven', 'six', 'space', 'three', 'two', 'uni000A', 'uni2F3C', 'uni2F4C', 'uni2F74', 'uni2F7D', 'uni2F84', 'uni2F8F', 'uni2F9D', 'uni2FBC', 'uni3001', 'uni3002', 'uni4E00', 'uni4E09', 'uni4E0A', 'uni4E0B', 'uni4E0D', 'uni4E14', 'uni4E26', 'uni4E2D', 'uni4EBA', 'uni4ED8', 'uni4EE5', 'uni4EFF', 'uni4F30', 'uni4F73', 'uni4F9B', 'uni5167', 'uni5168', 'uni5206', 'uni523B', 'uni529B', 'uni52A0', 'uni52D5', 'uni5316', 'uni5347', 'uni53D7', 'uni53EF', 'uni5408', 'uni540C', 'uni5426', 'uni56DE', 'uni56E0', 'uni5728', 'uni5750', 'uni57F9', 'uni589E', 'uni5920', 'uni5927', 'uni5931', 'uni597D', 'uni5982', 'uni5C0D', 'uni5C6C', 'uni5E73', 'uni5EA6', 'uni5F37', 'uni5F8C', 'uni5FAA', 'uni5FC3', 'uni5FEB', 'uni614B', 'uni6163', 'uni61C9', 'uni6210', 'uni6301', 'uni6307', 'uni63D0', 'uni6548', 'uni6574', 'uni65BC', 'uni662F', 'uni6642', 'uni6700', 'uni6709', 'uni67E5', 'uni6A19', 'uni6B47', 'uni6B64', 'uni6B78', 'uni6C27', 'uni6C42', 'uni6CC1', 'uni6D3B', 'uni6E2C', 'uni7206', 'uni72C0', 'uni7387', 'uni73FE', 'uni74B0', 'uni7576', 'uni767B', 'uni767C', 'uni7684', 'uni76F8', 'uni770B', 'uni77AC', 'uni77ED', 'uni7A0B', 'uni7A69', 'uni7B49', 'uni7BA1', 'uni7BC0', 'uni7D1A', 'uni7D66', 'uni7DAD', 'uni7DF4', 'uni7E69', 'uni7E8C', 'uni7FD2', 'uni8010', 'uni80BA', 'uni80FD', 'uni81DF', 'uni8207', 'uni822C', 'uni8377', 'uni85C9', 'uni8840', 'uni8861', 'uni8A13', 'uni8A55', 'uni8A66', 'uni8AB2', 'uni8ABF', 'uni8B8A', 'uni8B93', 'uni8CA0', 'uni8CEA', 'uni8DB3', 'uni8DF3', 'uni8EAB', 'uni8F03', 'uni900F', 'uni901F', 'uni9020', 'uni9023', 'uni9032', 'uni904B', 'uni904E', 'uni9069', 'uni90E8', 'uni91CF', 'uni9418', 'uni9577', 'uni9593', 'uni964D', 'uni968E', 'uni96A8', 'uni9700', 'uni975C', 'uni9808', 'uni990A', 'uni9AD4', 'uni9AD8', 'uni9EDE', 'uni9F61', 'uniFF0C', 'zero']
+[2022-09-28 12:09:06,722 INFO] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 36, 37, 43, 44, 55, 69, 81, 94, 96, 8156, 8172, 8212, 8221, 8228, 8239, 8253, 8284, 8323, 8324, 15940, 15949, 15950, 15951, 15953, 15960, 15978, 15985, 16126, 16156, 16169, 16195, 16244, 16311, 16351, 16811, 16812, 16970, 17023, 17119, 17124, 17177, 17242, 17291, 17435, 17459, 17484, 17488, 17514, 18210, 18212, 18284, 18324, 18493, 18658, 18788, 18795, 18805, 18881, 18886, 19537, 19632, 20151, 20202, 20347, 20432, 20462, 20487, 20527, 20879, 20903, 21005, 21076, 21317, 21323, 21524, 21900, 21944, 22016, 22131, 22150, 22340, 22349, 22569, 23133, 23435, 23464, 23484, 23659, 23686, 23813, 23935, 24176, 25162, 25348, 25547, 25666, 25844, 26042, 26303, 26304, 26312, 26428, 26447, 26608, 26673, 27215, 27309, 27533, 27621, 27652, 27998, 28074, 28145, 28216, 28333, 28368, 28694, 28756, 28926, 28993, 29219, 29259, 29296, 29627, 30221, 30852, 30885, 31319, 31385, 31402, 31478, 31491, 31694, 31703, 31972, 32046, 32247, 32311, 32495, 32583, 32851, 32867, 32868, 32871, 32886, 32911, 32914, 32941, 33068, 33299, 33884, 34235, 34263, 34449, 34514, 34540, 34628, 34720, 34892, 35150, 35608, 35612, 36642, 36773, 38969]
+[2022-09-28 12:09:06,723 INFO] Closed glyph list over 'glyf': 183 glyphs after
+[2022-09-28 12:09:06,723 INFO] Glyph names: ['.notdef', '.null', 'A', 'B', 'H', 'I', 'T', 'b', 'braceleft', 'braceright', 'eight', 'five', 'four', 'n', 'nine', 'one', 'parenleft', 'parenright', 'percent', 'period', 'seven', 'six', 'space', 'three', 'two', 'uni000A', 'uni2F3C', 'uni2F4C', 'uni2F74', 'uni2F7D', 'uni2F84', 'uni2F8F', 'uni2F9D', 'uni2FBC', 'uni3001', 'uni3002', 'uni4E00', 'uni4E09', 'uni4E0A', 'uni4E0B', 'uni4E0D', 'uni4E14', 'uni4E26', 'uni4E2D', 'uni4EBA', 'uni4ED8', 'uni4EE5', 'uni4EFF', 'uni4F30', 'uni4F73', 'uni4F9B', 'uni5167', 'uni5168', 'uni5206', 'uni523B', 'uni529B', 'uni52A0', 'uni52D5', 'uni5316', 'uni5347', 'uni53D7', 'uni53EF', 'uni5408', 'uni540C', 'uni5426', 'uni56DE', 'uni56E0', 'uni5728', 'uni5750', 'uni57F9', 'uni589E', 'uni5920', 'uni5927', 'uni5931', 'uni597D', 'uni5982', 'uni5C0D', 'uni5C6C', 'uni5E73', 'uni5EA6', 'uni5F37', 'uni5F8C', 'uni5FAA', 'uni5FC3', 'uni5FEB', 'uni614B', 'uni6163', 'uni61C9', 'uni6210', 'uni6301', 'uni6307', 'uni63D0', 'uni6548', 'uni6574', 'uni65BC', 'uni662F', 'uni6642', 'uni6700', 'uni6709', 'uni67E5', 'uni6A19', 'uni6B47', 'uni6B64', 'uni6B78', 'uni6C27', 'uni6C42', 'uni6CC1', 'uni6D3B', 'uni6E2C', 'uni7206', 'uni72C0', 'uni7387', 'uni73FE', 'uni74B0', 'uni7576', 'uni767B', 'uni767C', 'uni7684', 'uni76F8', 'uni770B', 'uni77AC', 'uni77ED', 'uni7A0B', 'uni7A69', 'uni7B49', 'uni7BA1', 'uni7BC0', 'uni7D1A', 'uni7D66', 'uni7DAD', 'uni7DF4', 'uni7E69', 'uni7E8C', 'uni7FD2', 'uni8010', 'uni80BA', 'uni80FD', 'uni81DF', 'uni8207', 'uni822C', 'uni8377', 'uni85C9', 'uni8840', 'uni8861', 'uni8A13', 'uni8A55', 'uni8A66', 'uni8AB2', 'uni8ABF', 'uni8B8A', 'uni8B93', 'uni8CA0', 'uni8CEA', 'uni8DB3', 'uni8DF3', 'uni8EAB', 'uni8F03', 'uni900F', 'uni901F', 'uni9020', 'uni9023', 'uni9032', 'uni904B', 'uni904E', 'uni9069', 'uni90E8', 'uni91CF', 'uni9418', 'uni9577', 'uni9593', 'uni964D', 'uni968E', 'uni96A8', 'uni9700', 'uni975C', 'uni9808', 'uni990A', 'uni9AD4', 'uni9AD8', 'uni9EDE', 'uni9F61', 'uniFF0C', 'zero']
+[2022-09-28 12:09:06,723 INFO] Glyph IDs:   [0, 1, 2, 3, 8, 11, 12, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 36, 37, 43, 44, 55, 69, 81, 94, 96, 8156, 8172, 8212, 8221, 8228, 8239, 8253, 8284, 8323, 8324, 15940, 15949, 15950, 15951, 15953, 15960, 15978, 15985, 16126, 16156, 16169, 16195, 16244, 16311, 16351, 16811, 16812, 16970, 17023, 17119, 17124, 17177, 17242, 17291, 17435, 17459, 17484, 17488, 17514, 18210, 18212, 18284, 18324, 18493, 18658, 18788, 18795, 18805, 18881, 18886, 19537, 19632, 20151, 20202, 20347, 20432, 20462, 20487, 20527, 20879, 20903, 21005, 21076, 21317, 21323, 21524, 21900, 21944, 22016, 22131, 22150, 22340, 22349, 22569, 23133, 23435, 23464, 23484, 23659, 23686, 23813, 23935, 24176, 25162, 25348, 25547, 25666, 25844, 26042, 26303, 26304, 26312, 26428, 26447, 26608, 26673, 27215, 27309, 27533, 27621, 27652, 27998, 28074, 28145, 28216, 28333, 28368, 28694, 28756, 28926, 28993, 29219, 29259, 29296, 29627, 30221, 30852, 30885, 31319, 31385, 31402, 31478, 31491, 31694, 31703, 31972, 32046, 32247, 32311, 32495, 32583, 32851, 32867, 32868, 32871, 32886, 32911, 32914, 32941, 33068, 33299, 33884, 34235, 34263, 34449, 34514, 34540, 34628, 34720, 34892, 35150, 35608, 35612, 36642, 36773, 38969]
+[2022-09-28 12:09:06,723 DEBUG] Took 0.004s to close glyph list over 'glyf'
+[2022-09-28 12:09:06,725 INFO] Retaining 183 glyphs
+[2022-09-28 12:09:06,726 INFO] head subsetting not needed
+[2022-09-28 12:09:06,726 INFO] hhea subsetting not needed
+[2022-09-28 12:09:06,726 INFO] maxp subsetting not needed
+[2022-09-28 12:09:06,726 INFO] OS/2 subsetting not needed
+[2022-09-28 12:09:06,726 DEBUG] Reading 'hmtx' table from disk
+[2022-09-28 12:09:06,726 DEBUG] Decompiling 'hmtx' table
+[2022-09-28 12:09:06,726 DEBUG] Reading 'hhea' table from disk
+[2022-09-28 12:09:06,726 DEBUG] Decompiling 'hhea' table
+[2022-09-28 12:09:06,742 DEBUG] Took 0.016s to subset 'hmtx'
+[2022-09-28 12:09:06,742 INFO] hmtx subsetted
+[2022-09-28 12:09:06,749 DEBUG] Took 0.007s to subset 'cmap'
+[2022-09-28 12:09:06,749 INFO] cmap subsetted
+[2022-09-28 12:09:06,750 INFO] fpgm subsetting not needed
+[2022-09-28 12:09:06,750 INFO] prep subsetting not needed
+[2022-09-28 12:09:06,750 INFO] cvt  subsetting not needed
+[2022-09-28 12:09:06,750 INFO] loca subsetting not needed
+[2022-09-28 12:09:06,750 DEBUG] Took 0.000s to subset 'post'
+[2022-09-28 12:09:06,750 INFO] post subsetted
+[2022-09-28 12:09:06,750 INFO] gasp subsetting not needed
+[2022-09-28 12:09:06,750 WARNING] FFTM NOT subset; don't know how to subset; dropped
+[2022-09-28 12:09:06,750 INFO] vhea subsetting not needed
+[2022-09-28 12:09:06,750 DEBUG] Reading 'vmtx' table from disk
+[2022-09-28 12:09:06,750 DEBUG] Decompiling 'vmtx' table
+[2022-09-28 12:09:06,750 DEBUG] Reading 'vhea' table from disk
+[2022-09-28 12:09:06,751 DEBUG] Decompiling 'vhea' table
+[2022-09-28 12:09:06,765 DEBUG] Took 0.015s to subset 'vmtx'
+[2022-09-28 12:09:06,765 INFO] vmtx subsetted
+[2022-09-28 12:09:06,765 INFO] name subsetting not needed
+[2022-09-28 12:09:06,776 DEBUG] Took 0.010s to subset 'glyf'
+[2022-09-28 12:09:06,776 INFO] glyf subsetted
+[2022-09-28 12:09:06,777 DEBUG] Took 0.000s to subset GlyphOrder
+[2022-09-28 12:09:06,777 DEBUG] Took 0.000s to prune 'head'
+[2022-09-28 12:09:06,777 INFO] head pruned
+[2022-09-28 12:09:06,777 DEBUG] Reading 'OS/2' table from disk
+[2022-09-28 12:09:06,777 DEBUG] Decompiling 'OS/2' table
+[2022-09-28 12:09:06,777 INFO] OS/2 Unicode ranges pruned: [0, 48, 59, 68]
+[2022-09-28 12:09:06,783 DEBUG] Took 0.006s to prune 'glyf'
+[2022-09-28 12:09:06,783 INFO] glyf pruned
+[2022-09-28 12:09:06,784 DEBUG] Compiling 'glyf' table
+[2022-09-28 12:09:06,879 DEBUG] Writing 'glyf' table to disk
+[2022-09-28 12:09:06,880 DEBUG] Compiling 'maxp' table
+[2022-09-28 12:09:06,880 DEBUG] Writing 'maxp' table to disk
+[2022-09-28 12:09:06,881 DEBUG] Compiling 'loca' table
+[2022-09-28 12:09:06,881 DEBUG] Writing 'loca' table to disk
+[2022-09-28 12:09:06,881 DEBUG] Compiling 'head' table
+[2022-09-28 12:09:06,881 DEBUG] Writing 'head' table to disk
+[2022-09-28 12:09:06,881 DEBUG] Compiling 'hmtx' table
+[2022-09-28 12:09:06,881 DEBUG] Writing 'hmtx' table to disk
+[2022-09-28 12:09:06,881 DEBUG] Compiling 'hhea' table
+[2022-09-28 12:09:06,881 DEBUG] Writing 'hhea' table to disk
+[2022-09-28 12:09:06,882 DEBUG] Compiling 'OS/2' table
+[2022-09-28 12:09:06,882 DEBUG] Writing 'OS/2' table to disk
+[2022-09-28 12:09:06,882 DEBUG] Compiling 'cmap' table
+[2022-09-28 12:09:06,882 DEBUG] Writing 'cmap' table to disk
+[2022-09-28 12:09:06,882 DEBUG] Reading 'fpgm' table from disk
+[2022-09-28 12:09:06,882 DEBUG] Writing 'fpgm' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Reading 'prep' table from disk
+[2022-09-28 12:09:06,883 DEBUG] Writing 'prep' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Reading 'cvt ' table from disk
+[2022-09-28 12:09:06,883 DEBUG] Writing 'cvt ' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Compiling 'name' table
+[2022-09-28 12:09:06,883 DEBUG] Writing 'name' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Compiling 'post' table
+[2022-09-28 12:09:06,883 DEBUG] Writing 'post' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Reading 'gasp' table from disk
+[2022-09-28 12:09:06,883 DEBUG] Writing 'gasp' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Compiling 'vmtx' table
+[2022-09-28 12:09:06,883 DEBUG] Writing 'vmtx' table to disk
+[2022-09-28 12:09:06,883 DEBUG] Compiling 'vhea' table
+[2022-09-28 12:09:06,884 DEBUG] Writing 'vhea' table to disk
+[2022-09-28 12:09:06,907 DEBUG] - resources.fonts.size: 124.7KiB
+[2022-09-28 12:09:06,907 DEBUG] - resources.images.size: 6.0KiB
+[2022-09-28 12:09:06,907 DEBUG] - resources.gfxstate.size: 0.0B
+[2022-09-28 12:09:06,907 DEBUG] - resources.dict.size: 137.0B
+[2022-09-28 12:09:06,907 DEBUG] - info.size: 62.0B
+[2022-09-28 12:09:06,907 DEBUG] - catalog.size: 104.0B
+[2022-09-28 12:09:06,907 DEBUG] - xref.size: 570.0B
+[2022-09-28 12:09:06,908 DEBUG] - trailer.size: 141.0B
+[2022-09-28 12:55:10,011 INFO] 192.168.1.135 - - [28/Sep/2022 12:55:10] "[31m[1mGET /report/generate/pdf/13 HTTP/1.1[0m" 402 -
+[2022-09-28 12:55:16,160 INFO] 192.168.1.135 - - [28/Sep/2022 12:55:16] "GET /report/generate/pdf/14 HTTP/1.1" 200 -
+[2022-09-28 12:55:19,222 DEBUG] Exception ---> 'NoneType' object has no attribute 'pdf_path'
+[2022-09-28 12:55:19,224 INFO] 192.168.1.135 - - [28/Sep/2022 12:55:19] "[35m[1mGET /report/generate/pdf/18 HTTP/1.1[0m" 505 -
+[2022-09-28 12:56:32,962 INFO] 192.168.1.135 - - [28/Sep/2022 12:56:32] "[31m[1mGET /report/generate/pdf/13 HTTP/1.1[0m" 402 -
+[2022-09-28 12:56:35,013 INFO] 192.168.1.135 - - [28/Sep/2022 12:56:35] "GET /report/generate/pdf/14 HTTP/1.1" 200 -
+[2022-09-28 12:56:41,768 DEBUG] Exception ---> 'NoneType' object has no attribute 'pdf_path'
+[2022-09-28 12:56:41,769 INFO] 192.168.1.135 - - [28/Sep/2022 12:56:41] "[35m[1mGET /report/generate/pdf/18 HTTP/1.1[0m" 505 -
+[2022-09-28 12:56:47,299 INFO] 192.168.1.135 - - [28/Sep/2022 12:56:47] "GET /report/generate/pdf/14 HTTP/1.1" 200 -
+[2022-09-28 12:57:23,144 INFO] 192.168.1.135 - - [28/Sep/2022 12:57:23] "GET /report/generate/pdf/14 HTTP/1.1" 200 -
+[2022-09-28 12:57:39,108 DEBUG] Exception ---> 'NoneType' object has no attribute 'pdf_path'
+[2022-09-28 12:57:39,110 INFO] 192.168.1.135 - - [28/Sep/2022 12:57:39] "[35m[1mGET /report/generate/pdf/18 HTTP/1.1[0m" 505 -
+[2022-09-28 12:57:41,782 INFO] 192.168.1.135 - - [28/Sep/2022 12:57:41] "GET /report/generate/pdf/14 HTTP/1.1" 200 -

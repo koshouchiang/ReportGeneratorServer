@@ -1,0 +1,32 @@
+[2022-09-28 17:32:42,546 DEBUG] {'sucess_message': {'report_table_index': 18}}
+[2022-09-28 17:32:42,547 INFO] 192.168.1.106 - - [28/Sep/2022 17:32:42] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 17:32:42,810 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:32:42,811 INFO] 192.168.1.106 - - [28/Sep/2022 17:32:42] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:32:43,119 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:32:43,120 INFO] 192.168.1.106 - - [28/Sep/2022 17:32:43] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:35:46,665 DEBUG] {'sucess_message': {'report_table_index': 19}}
+[2022-09-28 17:35:46,665 INFO] 192.168.1.106 - - [28/Sep/2022 17:35:46] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 17:35:46,975 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:35:46,976 INFO] 192.168.1.106 - - [28/Sep/2022 17:35:46] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:35:47,332 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:35:47,332 INFO] 192.168.1.106 - - [28/Sep/2022 17:35:47] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:37:28,449 DEBUG] {'sucess_message': {'report_table_index': 20}}
+[2022-09-28 17:37:28,450 INFO] 192.168.1.106 - - [28/Sep/2022 17:37:28] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 17:37:28,760 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:37:28,763 INFO] 192.168.1.106 - - [28/Sep/2022 17:37:28] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:37:29,077 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:37:29,078 INFO] 192.168.1.106 - - [28/Sep/2022 17:37:29] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:41:21,666 DEBUG] {'sucess_message': {'report_table_index': 21}}
+[2022-09-28 17:41:21,668 INFO] 192.168.1.106 - - [28/Sep/2022 17:41:21] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 17:41:22,032 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:41:22,034 INFO] 192.168.1.106 - - [28/Sep/2022 17:41:22] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:41:22,446 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:41:22,447 INFO] 192.168.1.106 - - [28/Sep/2022 17:41:22] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:49:03,733 DEBUG] {'sucess_message': {'report_table_index': 22}}
+[2022-09-28 17:49:03,733 INFO] 192.168.1.106 - - [28/Sep/2022 17:49:03] "POST /report/generate/create HTTP/1.1" 200 -
+[2022-09-28 17:49:04,080 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:49:04,083 INFO] 192.168.1.106 - - [28/Sep/2022 17:49:04] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:49:04,408 DEBUG] {'sucess_message': {'result': True}}
+[2022-09-28 17:49:04,409 INFO] 192.168.1.106 - - [28/Sep/2022 17:49:04] "POST /report/generate/send HTTP/1.1" 200 -
+[2022-09-28 17:51:57,549 DEBUG] Exception ---> 'NoneType' object is not subscriptable
+[2022-09-28 17:51:57,550 INFO] 192.168.1.106 - - [28/Sep/2022 17:51:57] "[35m[1mGET /report/generate/query/22 HTTP/1.1[0m" 505 -
