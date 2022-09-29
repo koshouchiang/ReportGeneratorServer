@@ -147,9 +147,13 @@ class HealthServerRequestAction(RequestTemplate):
         generate_status = application.mysql_manage.query_data_generate_status(ReportTable, primary_key)
         result_message = application.mysql_manage.query_data_result_message(ReportTable, primary_key)
         if not result_message:
-            return {"error_message" : "pdf didn't generate done"}, 403
+            if generate_status["in_algorithm"]["flag"] == 0:
+                return {"error_message" : "algorithm didn't start"}, 403
+            if generate_status["in_algorithm"]["flag"] == 1 and generate_status["in_algorithm_done"]["flag"] == 0:
+                return {"error_message" : "algorithm running"}, 403
+            return {"error_message" : "algorithm didn't have result"}, 403
         if not result_message['status']:
-            return {"error_message" : result_message["message"]}, 403
+            return {"error_message" : result_message["message"]}, 405
         return {'time_record':generate_status, 'result_message':result_message}
 
 

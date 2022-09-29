@@ -18,7 +18,7 @@ class BaseTestCase(unittest.TestCase):
 
     def tearDown(self):
         """Hook method for deconstructing the test fixture after testing it."""
-        print('down')
+
         pass
 
 
@@ -57,8 +57,8 @@ class BaseTestCase(unittest.TestCase):
         """
         # send request to test client.
         with self.app.app_context():
-            if not access_token:
-                access_token = mock_access_token()
+            # if not access_token:
+            #     access_token = mock_access_token()
             response = self.client.get(endpoint,
                                        content_type='application/json',
                                        headers={'Authorization' : 'Bearer {}'.format(access_token)})
@@ -150,6 +150,5 @@ class BaseTestCase(unittest.TestCase):
                 StatusCode = 0
         """
         # assert http status code.
-        print(response.text)
         self.assertEqual(http_status_code, response.status_code)
 

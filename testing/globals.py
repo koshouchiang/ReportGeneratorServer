@@ -1,4 +1,4 @@
 from application import create_app
 
 
-app = create_app('test')
+app = create_app('master')
