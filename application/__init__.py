@@ -1,6 +1,6 @@
 
 from .contorller import main as application_root
-
+from application.mysql_.model import UserTable, FileTable, ReportTable, TokenPermissionTable
 import time, threading, json, os
 from flask import Flask
 from application.setting import q, FOLDER_CONTROLLER_LIST
@@ -33,7 +33,14 @@ def create_app(mode : str):
     # seven_days_history_collection = config_instance.mongo_connect()
     # global report_server_token
     # report_server_token = config_instance.get_report_server_token()
-
+    if mode == 'test':
+        data = {
+            "token" : "711565b38b1c85510998e256e74b7cc73d558b7cbe77ad52ba0f1b3da276a597",
+            "server_name" : "KoshouDevelop",
+            "create_time" : int(time.time()),
+            "permission" : "normal"
+        }
+        mysql_manage.create_data(data, TokenPermissionTable, 1)
 
     app = Flask(__name__)
     app.config['SWAGGER'] = {

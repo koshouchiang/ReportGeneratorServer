@@ -211,17 +211,23 @@
               }
             },
             "403": {
-                "description": "演算法失敗",
+                "description": "等待演算法執行(包含執行中與佇列中)",
                 "schema": {
                   "$ref": "#/definitions/error_response"
                 }
-              },
-              "505": {
-                "description": "Exception",
-                "schema": {
-                  "$ref": "#/definitions/error_response"
-                }
+            },
+            "405": {
+              "description": "演算法失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
               }
+            },
+            "505": {
+              "description": "Exception",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            }
           }
         }
       },
