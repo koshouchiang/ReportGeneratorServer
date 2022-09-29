@@ -150,5 +150,6 @@ class BaseTestCase(unittest.TestCase):
                 StatusCode = 0
         """
         # assert http status code.
+        print(response.text)
         self.assertEqual(http_status_code, response.status_code)
 
