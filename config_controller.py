@@ -33,7 +33,7 @@ class ConfigDevelop(ConfigMaster):
         self.mode_name = 'develop' 
         with open('mysql_config.json') as f:
             content = json.load(f)
-        self.engine_url = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(content[self.mode_name]['name'], content[self.mode_name]['password'], content[self.mode_name]['host'], content[self.mode_name]['post'], content[self.mode_name]['schema'])
+        self.engine_url = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(content[self.mode_name]['name'], content[self.mode_name]['password'], 'localhost', content[self.mode_name]['post'], content[self.mode_name]['schema'])
 
 
 
