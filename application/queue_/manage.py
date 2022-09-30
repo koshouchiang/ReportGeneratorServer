@@ -20,5 +20,6 @@ def multithread_run():
                     application.contorller.start_process(msg)
                 except Exception as e:
                     logger_message('Exception ---> {}'.format(str(e)))
+                    health_server_request.report_generating = False
 
         time.sleep(1)
