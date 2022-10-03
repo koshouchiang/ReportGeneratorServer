@@ -34,6 +34,14 @@ jobs:
         mysql database: 'test' # Optional, default value is "test". The specified database which will be create
         mysql user: 'test_user' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
         mysql password: 'tester' # Required if "mysql user" exists. The password for the "mysql user"
+   
+    - name: Set up MongoDB
+      uses: supercharge/mongodb-github-action@1.8.0
+      with:
+        mongodb-version: '3.6.3'
+        mongodb-username: supercharge
+        mongodb-password: secret
+        mongodb-db: supercharge
 
     # 建立環境
     - name: Install Dependencies

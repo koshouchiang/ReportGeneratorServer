@@ -78,6 +78,9 @@ class CardiovascularHealthReportGenerator:
         OriginalTimeArray=[]
         ConcateEcgArray=[] 
         MotionDataArray=[]
+        
+        FileList = sorted(FileList)
+        
         NowDayEnd=NowDay+timedelta(days = 1)    
         for index in range(len(FileList)):
             ##NowFilePath=os.path.join(self.BasePath,'RawData暫存',UUID,FileList[index])
@@ -298,6 +301,7 @@ class CardiovascularHealthReportGenerator:
                 2-D list of raw motion data.
             SampleRate: int or float
                 Sample rate of motion data.
+
         Return:
             out: list
                 1-D list of flags of static.
@@ -703,6 +707,8 @@ class CardiovascularHealthReportGenerator:
         return [HR_Min,HR_Max,HR_Mean,HR_Min_perHour,HR_Max_perHour,HR_Mean_perHour,evaluationTime_MinuteperHour] 
 
     ####=============================心臟分析==========================
+    
+    
     def CardioHistoryExtractor(self,UUID):    
         cardiovascularReportList=[]
         cardiovascularReportList.append({'name': 'Report 1','date':(date.today()).strftime('%Y/%m/%d'),'score':0})  ### Report 1先設定為空白
@@ -741,7 +747,8 @@ class CardiovascularHealthReportGenerator:
                 cardiovascularReportList.append({'name': ReportIndexText,'date':NowReport['date'],'score':NowReport['score']})
         
         return cardiovascularReportList
-
+    
+    
     def CardiovascularAnalysis(self,EcgData_Debasedline,OriginalTimeArray,MotionData,Age):     
         ####-----1. 心臟指標分析---------
         MotionSampleRate=2
@@ -1051,7 +1058,7 @@ class CardiovascularHealthReportGenerator:
         return report
 
     ####=====================主要呼叫函式====================================
-    def HealthReportGenerator(self,startTime,endTime,userInfo):
+    def HealthReportGenerator(self,startTime, endTime, userInfo, version, CardioHistoricalList=[]):
         
         startDate = startTime.split(" ")[0]
         endDate = endTime.split(" ")[0]
@@ -1089,9 +1096,10 @@ class CardiovascularHealthReportGenerator:
         Whole_MaxDecreaseTime=MaxDecreaseTimeIndex=HRMinTimeIndex=DayCount=-1 
         allRRIs=[] ####for poincare plot
         UnzipFileNameList=self.search_upzip(db_path=self.DB,target=UUID,start=startDate,end=endDate,export_path=UUID_tempPath)        
-        Detect_Num = 10
         
         document_process_(UUID_tempPath, UUID_tempPath)
+        
+        day_count = 0
         
         for NowDay in DayTimeArray:
             MaxDecreaseTimeIndex=MaxDecreaseTime=-1
@@ -1121,6 +1129,11 @@ class CardiovascularHealthReportGenerator:
             HR_Max_WholeDay=HR_Min_WholeDay=HR_Mean_WholeDay=-1 
             
             OriginalTimeArray,ConcateEcgArray,MotionDataArray=self.DataConcate(UnzipFileNameList,NowDay,userInfo["id"]) 
+            
+            if len(OriginalTimeArray) < 720:
+                continue
+            else :
+                day_count += 1
             
             if(len(ConcateEcgArray)>0): ####有量測資料               
                 DayCount=DayCount+1
@@ -1230,6 +1243,13 @@ class CardiovascularHealthReportGenerator:
                     "heartRate24Hours": heartRate24HoursDict,
                     "ecgs":ecgDict_filter})
         
+        # if day_count < 7:
+            
+        #     if version == "A002V2":
+        #         return {'status':False, 'message':'The Number of the Day is Not Enough'}
+        #     elif version == "A002V3":
+        #         return {'status':False, 'message':'The Number of the Day is Not Enough', 'record':[]}
+        
         if(MaxDecreaseTimeIndex!=-1):        
             heartRate7DaysDict[MaxDecreaseTimeIndex]["maxDecrease"]=True
         
@@ -1296,9 +1316,18 @@ class CardiovascularHealthReportGenerator:
             heartfuncScoreLevel="優"
             funcEvaluationTxt = "心臟效率屬於優良等級，代表心血管調適能力足以應付身體的活動強度變化，當身體活動量降低時，心肺循環即可及時降低供給。"
             funcSuggestionTxt = "繼續維持既有健康生活習慣，並隨身體狀況調整適合的運動，以確保心血管系統維持優良的彈性調適空間。"
+          
+        if version == "A002V2":
+            CardioHistoricalList=self.CardioHistoryExtractor(userInfo["id"])
+            CardioHistoricalList[0]['score']=cardiovascularScore
             
-        CardioHistoricalList=self.CardioHistoryExtractor(userInfo["id"])
-        CardioHistoricalList[0]['score']=cardiovascularScore
+        elif version == "A002V3":
+        
+            CardioHistoricalList.insert(0, {'date': startDate[0:4] + '/' + startDate[4:6] + '/' + startDate[6:8], 'score': cardiovascularScore})
+            
+            for i, CardioHistorical in enumerate(CardioHistoricalList):
+                CardioHistoricalList[i].update({'name': 'Report ' + str(i+1)})
+        
         poincareimagepath=self.poincare_figure(datetime.now(),allRRIs=allRRIs,save_path=outputFolder1) ##poincare
         
         ####--------------write json Template File----------------------------------------
@@ -1370,11 +1399,28 @@ class CardiovascularHealthReportGenerator:
         with open(JsonSavedPath,'w',encoding='utf-8') as f:
             f.write((str)(jsontemplatefile))
         
-        if(os.path.exists(JsonSavedPath)):
-            return {'status':True, 'message':JsonSavedPath}            
-        else:
-            return {'status':False, 'message':'No Document'}
-    
+        if version == "A002V2":
+            
+            if(os.path.exists(JsonSavedPath)):
+                return {'status':True, 'message':JsonSavedPath}            
+            else:
+                return {'status':False, 'message':'No Document'}
+        
+        elif version == "A002V3":
+        
+            for i, CardioHistorical in enumerate(CardioHistoricalList):
+                CardioHistoricalList[i].pop('name')
+            
+            if len(CardioHistoricalList) > 6:
+                history_length = 6
+            else :
+                history_length = len(CardioHistoricalList)
+        
+            if(os.path.exists(JsonSavedPath)):
+                return {'status':True, 'message':JsonSavedPath, 'record':CardioHistoricalList[:history_length]}            
+            else:
+                return {'status':False, 'message':'No Document', 'record':[]}
+        
 if __name__ == '__main__':
     
     exportPath = os.path.abspath("G:/共用雲端硬碟/奇翼醫電_執行專案/智慧防疫好幫手/報告產生器")
@@ -1410,3 +1456,4 @@ if __name__ == '__main__':
         
         jsonfile_outputpath=HealthReport_Obj.HealthReportGenerator(startDate,endDate,userInfo) ##call function
         print('Finished! jsonfilepath:', jsonfile_outputpath)
+
