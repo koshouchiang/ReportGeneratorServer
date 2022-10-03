@@ -29,8 +29,8 @@ def create_app(mode : str):
     config_instance = config_map[mode]()
     global mysql_manage
     mysql_manage = config_instance.mysql_connect()
-    # global seven_days_history_collection
-    # seven_days_history_collection = config_instance.mongo_connect()
+    global mongodb_manage
+    mongodb_manage = config_instance.mongo_connect()
     # global report_server_token
     # report_server_token = config_instance.get_report_server_token()
     if mode == 'test':
