@@ -16,8 +16,8 @@ def document_process_(import_path, export_path):
     
     srj_files = [srj_file for srj_file in os.listdir(import_path) if srj_file.endswith('srj')]
     
-    if not import_path.endswith("\\"): import_path = import_path + "\\"
-    if not export_path.endswith("\\"): export_path = export_path + "\\"
+    if not import_path.endswith("\\"): import_path = import_path + "//"
+    if not export_path.endswith("\\"): export_path = export_path + "//"
     
     file_number = len(srj_files)
     
