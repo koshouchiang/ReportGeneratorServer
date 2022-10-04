@@ -74,6 +74,13 @@ class HealthServerRequestTestCase(BaseTestCase):
         response = self.get_request(endpoint = '/report/generate/query/3', access_token = token)
         return response
 
+    def get_pdf_token_error(self):
+        '''
+        token error
+        '''
+        
+        response = self.get_request(endpoint = '/report/generate/pdf/1')
+        return response
 
     def get_pdf_no_table_index(self):
         '''
@@ -123,6 +130,10 @@ class HealthServerRequestTestCase(BaseTestCase):
         response = self.get_query_algorithm_fail()
         self.assert_ok(response, http_status_code = 405)
         
+    def test_get_pdf_token_error(self):
+        response = self.get_pdf_token_error()
+        self.assert_ok(response, http_status_code = 401)
+
     def test_get_pdf_not_done(self):
         response = self.get_pdf_no_table_index()
         self.assert_ok(response, http_status_code = 402)
