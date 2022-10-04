@@ -36,7 +36,7 @@ class ConfigDevelop(ConfigMaster):
         self.db_name = 'report_server_develop'
         with open('mysql_config.json') as f:
             content = json.load(f)
-        self.mysql_engine_url = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(content[self.mode_name]['name'], content[self.mode_name]['password'], 'localhost', content[self.mode_name]['post'], content[self.mode_name]['algorithm_db'])
+        self.mysql_engine_url = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(content[self.mode_name]['name'], content[self.mode_name]['password'], 'localhost', content[self.mode_name]['post'], content[self.mode_name]['schema'])
         with open('mongo_config.json') as f:
             content = json.load(f)
         self.mongodb_engine_url = 'mongodb://{}:{}@{}:{}/?authMechanism=DEFAULT'.format(content[self.mode_name]['name'], content[self.mode_name]['password'], 'localhost', content[self.mode_name]['post'])
