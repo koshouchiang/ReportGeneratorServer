@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
       "description": "相關參數說明文件 ---> https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "title": "Report Server",
       "swagger-ui": "https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing"
     },
