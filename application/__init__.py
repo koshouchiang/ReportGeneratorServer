@@ -10,7 +10,7 @@ from config_controller import config_map
 from application.setting import LOG_PATH
 import logging
 from application.logger.model import Logger
-
+from application.health_server_request.model import HealthServerRequestAction
 
 def check_folder_path():
     for path in FOLDER_CONTROLLER_LIST:
@@ -34,6 +34,7 @@ def create_app(mode : str):
     # global report_server_token
     # report_server_token = config_instance.get_report_server_token()
     if mode == 'test':
+        health_server_request = HealthServerRequestAction()
         data = {
             "token" : "711565b38b1c85510998e256e74b7cc73d558b7cbe77ad52ba0f1b3da276a597",
             "server_name" : "KoshouDevelop",
