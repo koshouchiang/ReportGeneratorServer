@@ -34,8 +34,9 @@ def make_fake_data_for_unit_test(mode = 'test'):
         result_message = {"status": True, "message": "C:\\projects\\ReportGeneratorServer\\utility\\algorithms\\report\\ExerciseReportOutput\\7\\20221004\\Report_2022100411(7).json"}
         mysql_manage.update_generate_result_message(result_message, ReportTable, 1)
         current_record_id = mysql_manage.create_data(data, ReportTable)
-    
-
+        current_record_id = mysql_manage.create_data(data, ReportTable)
+        result_message = {"record": [], "status": False, "message": "The Number of the Day is Not Enough"}
+        mysql_manage.update_generate_result_message(result_message, ReportTable, 3)
 
 def create_app(mode : str):
     check_folder_path()

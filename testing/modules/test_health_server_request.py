@@ -66,6 +66,13 @@ class HealthServerRequestTestCase(BaseTestCase):
         response = self.get_request(endpoint = '/report/generate/query/2', access_token = token)
         return response
 
+    def get_query_algorithm_fail(self):
+        '''
+        no result_message
+        '''
+        
+        response = self.get_request(endpoint = '/report/generate/query/3', access_token = token)
+        return response
 
     def test_post_create_success(self):
         response = self.post_create_success()
@@ -94,5 +101,8 @@ class HealthServerRequestTestCase(BaseTestCase):
     def test_get_query_no_result_message(self):
         response = self.get_query_no_result_message()
         self.assert_ok(response, http_status_code = 403)
-        
+
+    def test_get_query_algorithm_fail(self):
+        response = self.get_query_algorithm_fail()
+        self.assert_ok(response, http_status_code = 405)
         
