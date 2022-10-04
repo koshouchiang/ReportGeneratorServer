@@ -23,8 +23,8 @@ def multithread_run():
                 except Exception as e:
                     cl, exc, tb = sys.exc_info()
                     for line in traceback.extract_tb(tb):
-                        print(line)
                         logger_message('Exception ---> {}'.format(str(line)))
+                    logger_message('Exception ---> {}'.format(str(e)))
                     health_server_request.report_generating = False
 
         time.sleep(1)
