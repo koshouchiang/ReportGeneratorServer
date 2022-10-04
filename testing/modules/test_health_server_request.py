@@ -39,7 +39,7 @@ class HealthServerRequestTestCase(BaseTestCase):
         success
         '''
 
-        response = self.get_request(endpoint = '/report/generate/query/7', access_token = token)
+        response = self.get_request(endpoint = '/report/generate/query/1', access_token = token)
         return response
 
     def get_query_token_error(self):
@@ -47,7 +47,7 @@ class HealthServerRequestTestCase(BaseTestCase):
         token error
         '''
         
-        response = self.get_request(endpoint = '/report/generate/query/7')
+        response = self.get_request(endpoint = '/report/generate/query/1')
         return response
 
     def get_query_report_table_index_error(self):
