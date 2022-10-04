@@ -1242,15 +1242,15 @@ class CardiovascularHealthReportGenerator:
                     "heartRate24Hours": heartRate24HoursDict,
                     "ecgs":ecgDict_filter})
         
-        if day_count < 7:
+        # if day_count < 7:
             
-            """
-            if version == "A002V2":
-                return {'status':False, 'message':'The Number of the Day is Not Enough'}
-            """
+        #     """
+        #     if version == "A002V2":
+        #         return {'status':False, 'message':'The Number of the Day is Not Enough'}
+        #     """
             
-            if version == "A002V2":
-                return {'status':False, 'message':'The Number of the Day is Not Enough', 'record':[]}
+        #     if version == "A002V2":
+        #         return {'status':False, 'message':'The Number of the Day is Not Enough', 'record':[]}
         
         if(MaxDecreaseTimeIndex!=-1):        
             heartRate7DaysDict[MaxDecreaseTimeIndex]["maxDecrease"]=True
