@@ -3,13 +3,14 @@ from datetime import datetime
 from utility.algorithms.report.ExerciseReportGenerator import ExerciseReportGenerator
 from utility.algorithms.report.SleepQualityReportGenerator import SleepQualityReportGenerator
 from utility.algorithms.report.CardiovascularHealthReportGenerator import CardiovascularHealthReportGenerator
-from application.setting import q, ZIP_FILE_PATH_HEALTH_SERVER, E001V1_FILES_PATH, PDF_A002V2_PATH, PDF_S001V1_PATH, PDF_E001V1_PATH
+from application.setting import q, ZIP_FILE_PATH_HEALTH_SERVER, E001V1_FILES_PATH, PDF_A002V2_PATH, PDF_A002V3_PATH, PDF_S001V1_PATH, PDF_E001V1_PATH
 import application.setting as setting
 from application.mysql_.model import ReportTable
 from application.algorithm_interface.model import choose_algorithm_type
 from application.generate_pdf_interface.model import fake_choose_generate_pdf_version
 from ..model import RequestTemplate
 import application
+from application.logger.model import logger_message
 
 
 
@@ -31,7 +32,8 @@ class HealthServerRequestAction(RequestTemplate):
         self.algorithm_setting_map = {
             'S001V1' : {'time_format' : '%Y%m%d %H%M%S'},
             'E001V1' : {'time_format' : '%Y%m%d %H%M%S'},
-            'A002V2' : {'time_format' : '%Y%m%d'}
+            'A002V2' : {'time_format' : '%Y%m%d'},
+            'A002V3' : {'time_format' : '%Y%m%d'}
         }
 
         self.data_completed_map = {
@@ -72,7 +74,7 @@ class HealthServerRequestAction(RequestTemplate):
             return (report_code), (algorithm_input['step_test_start_tt'], algorithm_input['step_test_end_tt'], algorithm_input['exercise_start_tt'], algorithm_input['exercise_end_tt'], algorithm_input['user_info'])
         elif report_code == 'E001V1':
             return (report_code), (algorithm_input['report_start_tt'], algorithm_input['report_end_tt'], algorithm_input['user_info'])
-        elif report_code == 'A002V2':
+        elif report_code == 'A002V2' or report_code == 'A002V3':
             return (report_code), (algorithm_input['report_start_tt'], algorithm_input['report_end_tt'], algorithm_input['user_info'])
         
 
@@ -91,8 +93,15 @@ class HealthServerRequestAction(RequestTemplate):
             algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], algorithm_input[2], algorithm_input[3], user_info)
         elif report_code == 'E001V1':
             algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info)
-        elif report_code == 'A002V2':
-            algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info)
+        elif report_code == 'A002V2' or report_code == 'A002V3':
+            history_list = application.mongodb_manage.query_data_id(user_info['id'])
+            # algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info)
+            algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info, report_code, history_list)
+            if algorithm_result['status'] is True:
+                history_result = {"history" : algorithm_result['record'][0]}
+                history_result["history"]['score'] = int(history_result["history"]['score'])
+                history_result['id'] = user_info['id']
+                application.mongodb_manage.create_data(history_result)
         application.mysql_manage.update_generate_result_message(algorithm_result, ReportTable, content['primary_key'])
         application.mysql_manage.update_data_generate_status(ReportTable, content['primary_key'], 'in_algorithm_done')
         return algorithm_result, report_code, user_info
@@ -100,9 +109,11 @@ class HealthServerRequestAction(RequestTemplate):
     def start_generate_pdf_part(self, content : dict, json_output_path : str, report_code : str, user_info : dict):
         self.filename = '{0}_{1:05d}_{2}.pdf'.format(report_code, int(user_info['id']), str(int(time.time())))
         application.mysql_manage.update_data_generate_status(ReportTable, content['primary_key'], 'in_generate_pdf')
+        logger_message('json_output_path: {}'.format(json_output_path))
         print('json_output_path: {}'.format(json_output_path))
+        logger_message('Start {} PDF'.format(report_code))
         print('Start {} PDF'.format(report_code))
-
+        
         with open(json_output_path, 'r', encoding='utf-8') as f:
             report_json_string = f.read()
         report_json = json.loads(json.dumps(eval(report_json_string)))
@@ -120,9 +131,13 @@ class HealthServerRequestAction(RequestTemplate):
         elif report_code == 'A002V2':
             generate_pdf_version_instanse.genReport(report_json, self.filename)
             application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_A002V2_PATH, self.filename), ReportTable, content['primary_key'])
+        elif report_code == 'A002V3':
+            generate_pdf_version_instanse.genReport(report_json, self.filename)
+            application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_A002V3_PATH, self.filename), ReportTable, content['primary_key'])
+
         application.mysql_manage.update_data_generate_status(ReportTable, content['primary_key'], 'in_generate_pdf_done')
         print('End {} PDF.'.format(report_code))
-        
+        logger_message('End {} PDF.'.format(report_code))
 
     def check_file_endswith(self, file : str, kind : str) -> bool:
             return file.endswith(kind)
