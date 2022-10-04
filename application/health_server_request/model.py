@@ -32,8 +32,7 @@ class HealthServerRequestAction(RequestTemplate):
         self.algorithm_setting_map = {
             'S001V1' : {'time_format' : '%Y%m%d %H%M%S'},
             'E001V1' : {'time_format' : '%Y%m%d %H%M%S'},
-            'A002V2' : {'time_format' : '%Y%m%d'},
-            'A002V3' : {'time_format' : '%Y%m%d'}
+            'A002V2' : {'time_format' : '%Y%m%d'}
         }
 
         self.data_completed_map = {
@@ -74,7 +73,7 @@ class HealthServerRequestAction(RequestTemplate):
             return (report_code), (algorithm_input['step_test_start_tt'], algorithm_input['step_test_end_tt'], algorithm_input['exercise_start_tt'], algorithm_input['exercise_end_tt'], algorithm_input['user_info'])
         elif report_code == 'E001V1':
             return (report_code), (algorithm_input['report_start_tt'], algorithm_input['report_end_tt'], algorithm_input['user_info'])
-        elif report_code == 'A002V2' or report_code == 'A002V3':
+        elif report_code == 'A002V2':
             return (report_code), (algorithm_input['report_start_tt'], algorithm_input['report_end_tt'], algorithm_input['user_info'])
         
 
@@ -93,9 +92,8 @@ class HealthServerRequestAction(RequestTemplate):
             algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], algorithm_input[2], algorithm_input[3], user_info)
         elif report_code == 'E001V1':
             algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info)
-        elif report_code == 'A002V2' or report_code == 'A002V3':
+        elif report_code == 'A002V2':
             history_list = application.mongodb_manage.query_data_id(user_info['id'])
-            # algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info)
             algorithm_result = choose_algorithm_type(report_code, content['zip_path'])(algorithm_input[0], algorithm_input[1], user_info, report_code, history_list)
             if algorithm_result['status'] is True:
                 history_result = {"history" : algorithm_result['record'][0]}
@@ -127,11 +125,7 @@ class HealthServerRequestAction(RequestTemplate):
                 os.mkdir(self.temp_png_path)
             generate_pdf_version_instanse.genReport(report_json, self.filename, self.temp_png_path)
             application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_E001V1_PATH, self.filename), ReportTable, content['primary_key'])
-
         elif report_code == 'A002V2':
-            generate_pdf_version_instanse.genReport(report_json, self.filename)
-            application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_A002V2_PATH, self.filename), ReportTable, content['primary_key'])
-        elif report_code == 'A002V3':
             generate_pdf_version_instanse.genReport(report_json, self.filename)
             application.mysql_manage.update_generate_pdf_path(os.path.join(PDF_A002V3_PATH, self.filename), ReportTable, content['primary_key'])
 

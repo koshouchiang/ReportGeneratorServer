@@ -3,7 +3,7 @@ from swagger_ui import api_doc
 from flask_cors import CORS
 import threading
 
-app = create_app('develop')
+app = create_app('master')
 CORS(app)
 
 api_doc(app, config_path='swagger_config.json', url_prefix='/api/doc', title='API doc')

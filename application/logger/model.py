@@ -16,7 +16,7 @@ class Logger(object):
 
     def __init__(self,
                  filename = './log/report_server_log.txt',
-                 level='debug',
+                 level='info',
                  when='H',
                  back_count=0,
                  fmt='[%(asctime)s %(levelname)-3s] %(message)s'):
@@ -37,5 +37,5 @@ class Logger(object):
 
 
 def logger_message(connect):
-    application.logger_con.debug(connect)
+    application.logger_con.info(connect)
 

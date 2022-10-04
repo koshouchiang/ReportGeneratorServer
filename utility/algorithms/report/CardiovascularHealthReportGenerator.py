@@ -301,7 +301,6 @@ class CardiovascularHealthReportGenerator:
                 2-D list of raw motion data.
             SampleRate: int or float
                 Sample rate of motion data.
-
         Return:
             out: list
                 1-D list of flags of static.
@@ -1243,12 +1242,15 @@ class CardiovascularHealthReportGenerator:
                     "heartRate24Hours": heartRate24HoursDict,
                     "ecgs":ecgDict_filter})
         
-        # if day_count < 7:
+        if day_count < 7:
             
-        #     if version == "A002V2":
-        #         return {'status':False, 'message':'The Number of the Day is Not Enough'}
-        #     elif version == "A002V3":
-        #         return {'status':False, 'message':'The Number of the Day is Not Enough', 'record':[]}
+            """
+            if version == "A002V2":
+                return {'status':False, 'message':'The Number of the Day is Not Enough'}
+            """
+            
+            if version == "A002V2":
+                return {'status':False, 'message':'The Number of the Day is Not Enough', 'record':[]}
         
         if(MaxDecreaseTimeIndex!=-1):        
             heartRate7DaysDict[MaxDecreaseTimeIndex]["maxDecrease"]=True
@@ -1316,12 +1318,14 @@ class CardiovascularHealthReportGenerator:
             heartfuncScoreLevel="優"
             funcEvaluationTxt = "心臟效率屬於優良等級，代表心血管調適能力足以應付身體的活動強度變化，當身體活動量降低時，心肺循環即可及時降低供給。"
             funcSuggestionTxt = "繼續維持既有健康生活習慣，並隨身體狀況調整適合的運動，以確保心血管系統維持優良的彈性調適空間。"
-          
+        
+        """
         if version == "A002V2":
             CardioHistoricalList=self.CardioHistoryExtractor(userInfo["id"])
             CardioHistoricalList[0]['score']=cardiovascularScore
+        """
             
-        elif version == "A002V3":
+        if version == "A002V2":
         
             CardioHistoricalList.insert(0, {'date': startDate[0:4] + '/' + startDate[4:6] + '/' + startDate[6:8], 'score': cardiovascularScore})
             
@@ -1399,14 +1403,16 @@ class CardiovascularHealthReportGenerator:
         with open(JsonSavedPath,'w',encoding='utf-8') as f:
             f.write((str)(jsontemplatefile))
         
+        """
         if version == "A002V2":
             
             if(os.path.exists(JsonSavedPath)):
                 return {'status':True, 'message':JsonSavedPath}            
             else:
                 return {'status':False, 'message':'No Document'}
+        """
         
-        elif version == "A002V3":
+        if version == "A002V2":
         
             for i, CardioHistorical in enumerate(CardioHistoricalList):
                 CardioHistoricalList[i].pop('name')
@@ -1456,4 +1462,3 @@ if __name__ == '__main__':
         
         jsonfile_outputpath=HealthReport_Obj.HealthReportGenerator(startDate,endDate,userInfo) ##call function
         print('Finished! jsonfilepath:', jsonfile_outputpath)
-
