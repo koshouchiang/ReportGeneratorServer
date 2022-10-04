@@ -63,7 +63,7 @@ class HealthServerRequestTestCase(BaseTestCase):
         no result_message
         '''
         
-        response = self.get_request(endpoint = '/report/generate/query/1', access_token = token)
+        response = self.get_request(endpoint = '/report/generate/query/2', access_token = token)
         return response
 
 
@@ -91,9 +91,8 @@ class HealthServerRequestTestCase(BaseTestCase):
         response = self.get_query_report_table_index_error()
         self.assert_ok(response, http_status_code = 402)
 
-    #  unit test can't test this
-    # def test_get_query_no_result_message(self):
-    #     response = self.get_query_no_result_message()
-    #     self.assert_ok(response, http_status_code = 403)
+    def test_get_query_no_result_message(self):
+        response = self.get_query_no_result_message()
+        self.assert_ok(response, http_status_code = 403)
         
         
