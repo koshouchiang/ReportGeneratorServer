@@ -17,7 +17,7 @@ def check_folder_path():
         if not os.path.exists(path):
             os.mkdir(path)
 
-def make_fake_data_for_unit_test(mode = 'test'):
+def make_fake_data_for_unit_test(mode):
     if mode == 'test':
         health_server_request = HealthServerRequestAction()
         data = {
@@ -50,7 +50,7 @@ def create_app(mode : str):
     mongodb_manage = config_instance.mongo_connect()
     # global report_server_token
     # report_server_token = config_instance.get_report_server_token()
-    make_fake_data_for_unit_test()
+    make_fake_data_for_unit_test(mode)
     app = Flask(__name__)
     app.config['SWAGGER'] = {
     "title": "Report Server",

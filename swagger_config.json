@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-      "description": "0.1.5_dev版本為移除7日演算法檢查機制, 方便開發之用\n相關參數說明文件 ---> https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing",
-      "version": "0.1.5_dev",
+      "description": "_dev版本為移除7日演算法檢查機制, 方便開發之用\n相關參數說明文件 ---> https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing",
+      "version": "0.1.6_dev",
       "title": "Report Server",
       "swagger-ui": "https://docs.google.com/spreadsheets/d/1tmt91xInFUt23pCtWEp2drSfcOgDZQIKx9ZotC9Gtro/edit?usp=sharing"
     },
@@ -108,7 +108,7 @@
           "tags": [
             "Health Server Request"
           ],
-          "summary": "send data(zip format)",
+          "summary": "send zip file",
           "description": "",
           "consumes": [
             "application/json"
@@ -126,7 +126,6 @@
                 "type": "object",
                 "example":{
                     "zip_file": "zip file",
-                    "end_flag": true,
                     "report_table_index":0
                 }
               }
@@ -151,8 +150,64 @@
                 "$ref": "#/definitions/error_response"
               }
             },
-            "403": {
-              "description": "Queue 已滿",
+            "405": {
+              "description": "尚未有生成報告序列號碼",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "505": {
+              "description": "Exception",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            }
+          }
+        }
+      },
+      "/report/generate/update": {
+        "post": {
+          "tags": [
+            "Health Server Request"
+          ],
+          "summary": "update end_flag each report_table_index",
+          "description": "",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "json format",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "example":{
+                    "end_flag": true,
+                    "report_table_index":0
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "資料接收完整",
+              "schema": {
+                "$ref": "#/definitions/sucess_response"
+              }
+            },
+            "401": {
+              "description": "身分驗證失敗",
+              "schema": {
+                "$ref": "#/definitions/error_response"
+              }
+            },
+            "402": {
+              "description": "Body 資料完整性不足",
               "schema": {
                 "$ref": "#/definitions/error_response"
               }

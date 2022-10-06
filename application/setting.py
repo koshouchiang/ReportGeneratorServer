@@ -1,7 +1,6 @@
 import queue, os
 
-global stop_flag
-stop_flag = False
+
 QUEUE_SIZE = 10
 global q
 q = queue.Queue(QUEUE_SIZE)

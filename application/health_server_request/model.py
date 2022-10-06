@@ -24,6 +24,8 @@ class HealthServerRequestAction(RequestTemplate):
             "in_create_done" : {"flag" : 0, "time":None},
             "in_send" : {"flag" : 0, "time":None},
             "in_send_done" : {"flag" : 0, "time":None},
+            "in_update" : {"flag" : 0, "time":None},
+            "in_update_done" : {"flag" : 0, "time":None},
             "in_algorithm" : {"flag" : 0, "time":None},
             "in_algorithm_done" : {"flag" : 0, "time":None},
             "in_generate_pdf" : {"flag" : 0, "time":None},
@@ -37,8 +39,8 @@ class HealthServerRequestAction(RequestTemplate):
 
         self.data_completed_map = {
             'create' : ["report_code", "user_id" ,"health_server_got_generate_request_time" ,"health_server_post_create_time" ,"user_info", "algorithm_input"],
-            'send' : ["report_table_index", "end_flag"]
-
+            'send' : ["report_table_index"],
+            'update' : ["report_table_index", "end_flag"]
         }
 
     def check_data_completed(self, data : dict, post_api_mode : str):
@@ -148,6 +150,8 @@ class HealthServerRequestAction(RequestTemplate):
             "in_create_done" : {"flag" : 0, "time":None},
             "in_send" : {"flag" : 0, "time":None},
             "in_send_done" : {"flag" : 0, "time":None},
+            "in_update" : {"flag" : 0, "time":None},
+            "in_update_done" : {"flag" : 0, "time":None},
             "in_algorithm" : {"flag" : 0, "time":None},
             "in_algorithm_done" : {"flag" : 0, "time":None},
             "in_generate_pdf" : {"flag" : 0, "time":None},
