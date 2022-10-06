@@ -28,6 +28,7 @@ def report_generate_create():
         if check_result:
             data['report_server_got_post_create_time'] = int(time.time())
             data['generate_status'] = health_server_request.report_generate_progress
+            data['in_queue'] = False
             user_table_data = {'time':data['report_server_got_post_create_time'], 'report_code':data['report_code'], 'user_id':data['user_id'], 'user_info':data['user_info']}
             application.mysql_manage.create_data(user_table_data, UserTable)
             current_record_id = application.mysql_manage.create_data(data, ReportTable)
@@ -45,15 +46,15 @@ def report_generate_create():
 @verify_report_server_token
 def report_generate_send():
     try:
-        if len(request.files) != 1:
+        if len(request.files) > 1:
             logger_message(({"error_message" : "post too many files at once"}, 402))
             return {"error_message" : "post too many files at once"}, 402
+        elif len(request.files) == 0:
+            logger_message(({"error_message" : "no post file in this request"}, 402))
+            return {"error_message" : "no post file in this request"}, 402
         if not health_server_request.check_file_endswith(request.files['zip_file'].filename, '.zip'):
             logger_message(({"error_message" : "data is not zip file"}, 402))
             return {"error_message" : "data is not zip file"}, 402
-        if health_server_request.check_qsize_fulled():
-            logger_message(({"error_message" : "Queue is fulled"}, 403))
-            return {"error_message" : "Queue is fulled"}, 403
         check_result, message = health_server_request.check_data_completed(request.form, 'send')
         report_table_index = request.form['report_table_index']
         report_table_index_created = application.mysql_manage.query_data_primary_key(ReportTable, report_table_index)
@@ -71,13 +72,31 @@ def report_generate_send():
                 'zip_filename' : request.files['zip_file'].filename
             }
             application.mysql_manage.create_data(file_table_data, FileTable)
-            if request.form['end_flag'] == "True":
-                all_file_list = application.mysql_manage.query_data_same_rtb_zf(FileTable, report_table_index)
-                health_server_request.explode_zip_file(all_file_list, zip_path)
-                # q.put("health_server_request")
-                q.put({"request_type" : "health_server_request","table" : ReportTable, "primary_key" : report_table_index, "zip_path" : zip_path})
-                print('q size : {}'.format(q.qsize()))
             application.mysql_manage.update_data_generate_status(ReportTable, report_table_index, 'in_send_done')
+            logger_message({"sucess_message": {"result" : True}})
+            return {"sucess_message": {"result" : True}}
+        else:
+            logger_message(({'error_message' : message}, 402))
+            return {"error_message" : message}, 402
+    except Exception as e:
+        logger_message('Exception ---> {}'.format(str(e)))
+        return {"error_message" : str(e)}, 505
+
+@main.route('/report/generate/update', methods=['POST'])
+@verify_report_server_token
+def report_generate_update():
+    try:
+        data = request.get_json()
+        application.mysql_manage.update_data_generate_status(ReportTable, data['report_table_index'], 'in_update')
+        check_result, message = health_server_request.check_data_completed(data, 'update')
+        report_table_index_created = application.mysql_manage.query_data_primary_key(ReportTable, data['report_table_index'])
+        if not report_table_index_created:
+            logger_message(({"error_message" : "have a didn't create report_table_index"}, 405))
+            return {"error_message" : "have a didn't create report_table_index"}, 405
+        if check_result :
+            if data['end_flag'] == True:
+                application.mysql_manage.update_end_flag(data['end_flag'], ReportTable, data['report_table_index'])
+            application.mysql_manage.update_data_generate_status(ReportTable, data['report_table_index'], 'in_update_done')
             logger_message({"sucess_message": {"result" : True}})
             return {"sucess_message": {"result" : True}}
         else:

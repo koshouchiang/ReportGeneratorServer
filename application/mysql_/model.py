@@ -1,11 +1,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
-from sqlalchemy import Integer, String, DATETIME, TEXT, JSON, BigInteger
+from sqlalchemy import Integer, String, DATETIME, TEXT, JSON, BigInteger, Boolean
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import func
 from sqlalchemy import update
 import json, time, os
+
+
 
 
 base = declarative_base()
@@ -43,8 +45,10 @@ class ReportTable(base):
     report_server_got_post_create_time = Column(BigInteger)
     algorithm_input = Column(JSON)
     report_code = Column(String(55))
+    end_flag = Column(Boolean)
     generate_status = Column(JSON)
     result_message = Column(JSON)
+    in_queue = Column(Boolean)
     pdf_path = Column(String(255))
 
 
@@ -54,7 +58,7 @@ class MySQLAction:
         self.connect(engine_url)
 
     def connect(self, engine_url):
-        self.engine = create_engine(engine_url, echo=False)
+        self.engine = create_engine(engine_url, echo=False, pool_size=20, max_overflow=0)
 
     def create_table(self):
         base.metadata.create_all(self.engine)
@@ -131,6 +135,19 @@ class MySQLAction:
         session.close()
         return query_result
 
+    def query_data_end_flag_and_in_queue(self, table, end_flag, queue_flag):
+        result_list = [] 
+        session = self.create_session()
+        query_result = session.query(table).filter_by(end_flag = end_flag, in_queue = queue_flag).all()
+        if query_result == []:
+            return False, None
+        for i in query_result:
+            # print(i.record_id, i.end_flag, i.in_queue)
+            result_list.append(i.record_id)
+        session.commit()
+        session.close()
+        return True, result_list
+
     def query_data_result_message(self, table, primary_key):
         session = self.create_session()
         query_result = session.query(table).get(primary_key).result_message
@@ -145,6 +162,15 @@ class MySQLAction:
         session.close()
         return query_result
 
+    def query_data_zip_path(self, table, report_table_index):
+        session = self.create_session()
+        query_result = session.query(table).filter_by(report_table_index = report_table_index).all()
+        for i in query_result:
+            zip_path = i.zip_path
+        session.commit()
+        session.close()
+        return zip_path
+
     def update_data_generate_status(self, table, primary_key, status):
         target_flag_key = '$.{}.{}'.format(status,'flag')
         target_flag_time = '$.{}.{}'.format(status,'time')
@@ -152,6 +178,18 @@ class MySQLAction:
         session.query(table).filter_by(record_id=primary_key).update({table.generate_status: func.json_set(table.generate_status, target_flag_key, True)})
         session.query(table).filter_by(record_id=primary_key).update({table.generate_status: func.json_set(table.generate_status, target_flag_time, int(time.time()))})
 
+        session.commit()
+        session.close()
+
+    def update_end_flag(self, data, table, primary_key):
+        session = self.create_session()
+        session.query(table).filter_by(record_id=primary_key).update({table.end_flag: data})
+        session.commit()
+        session.close()
+
+    def update_in_queue(self, data, table, primary_key):
+        session = self.create_session()
+        session.query(table).filter_by(record_id=primary_key).update({table.in_queue: data})
         session.commit()
         session.close()
 
